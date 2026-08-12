@@ -50,7 +50,7 @@ export const BUSINESS_INFO = {
      * stops the site being indexed at all. Change this one line when the
      * domain is attached, redeploy, resubmit the sitemap.
      */
-    website: 'https://a1-paving.vercel.app',
+    website: 'https://a1-paving-five.vercel.app',
   },
 
   /**
