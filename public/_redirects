@@ -1,0 +1,10 @@
+# Netlify redirects for SPA client-side routing.
+# Every route is rendered by the React app, so anything that is not a real file
+# has to fall through to index.html — including the /asphalt-paving/<city> pages.
+
+# Serve real files directly so crawlers get them, not the SPA shell.
+/sitemap.xml  /sitemap.xml  200
+/robots.txt   /robots.txt   200
+
+# Everything else is client-side routed.
+/*  /index.html  200
