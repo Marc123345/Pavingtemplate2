@@ -1,11 +1,11 @@
-# Patrick Seal Coating
+# A1 Paving
 
-Lead-gen site for **Patrick Seal Coating** — asphalt seal coating, crack filling and
-line striping, residential + commercial, Spokane Valley WA and North Idaho.
+Lead-gen site for **A1 Paving** — asphalt paving, tar and chip, resurfacing, milling
+and sealcoating. Residential, commercial and industrial, across a 40-mile radius of
+Grand Rapids, Michigan.
 
-Built from the [Pavingtemplate](https://github.com/Marc123345/Pavingtemplate) repo
-(Vite + React 18 + TypeScript + Tailwind + framer-motion), fully rebranded off
-Cumberland Tar & Chip.
+Owner: Bill Cooper. Vite + React 18 + TypeScript + Tailwind + framer-motion, built
+from the paving template.
 
 ```bash
 npm install
@@ -24,39 +24,53 @@ npm run lint
 
 ## Before this goes live
 
-Four things were deliberately left as placeholders rather than invented. They are
-all marked `⚠ CONFIRM` in `src/config/businessInfo.ts`.
+Everything below is marked `⚠ CONFIRM` in `src/config/businessInfo.ts`.
 
 | # | What | Where | Why it's blocked |
 |---|------|-------|------------------|
-| 1 | **Domain** | `contact.website` | Currently `https://patricksealcoating.com`. This feeds every canonical URL, the JSON-LD `@id`, and the generated `sitemap.xml` — fix it before submitting to Google. |
-| 2 | **Lead form** | `forms.jotformId` | Empty on purpose. The template shipped with the previous client's Jotform ID (`252982641154460`); leaving it would have delivered Patrick's leads to a different company. Drop in a new Jotform ID and the embed switches on automatically — otherwise the contact page shows call / text / pre-filled-email buttons. |
-| 3 | **Trust badges** | `trustPoints` | Only claims that are true by construction (locally owned, free estimates, both service types, two-state coverage). **"Licensed & Insured", years in business, and job counts were NOT added** — add them only once Patrick confirms. |
-| 4 | **Hours** | `hours` | Trade-standard Mon–Fri 7–6, Sat 8–4. Seal coating is seasonal (the `season` field says Apr–Oct) so confirm what he actually wants shown. |
+| 1 | **Grand Rapids address** | `address` | The discovery form gave a Lebanon, **Tennessee** street address, then said the business is "now in Grand Rapids, Michigan" with a 40-mile Grand Rapids service radius. See below. |
+| 2 | **Domain** | `contact.website` | Currently the deployment URL. It feeds every canonical, the JSON-LD `@id`, and the generated `sitemap.xml`. Fix before submitting to Google. |
+| 3 | **Lead form** | `forms.jotformId` | Empty on purpose. The template shipped with a previous client's Jotform ID; leaving it would deliver A1's leads to another company. Drop in a new ID and the embed switches on — until then the contact page shows call / text / pre-filled-email buttons. |
+| 4 | **Phone number** | `contact.phone` | `(615)` is a Nashville area code on a site targeting Grand Rapids. It works, but a local `616` number converts better once ads are running. |
+| 5 | **Hours** | `hours` | Trade-standard Mon–Fri 7–6, Sat 8–4. Not supplied. Paving is seasonal here (`season` says Apr–Oct), so confirm what he wants shown. |
+
+### Two things deliberately left off the site
+
+**Job count.** The form says 15 years in business and roughly 10 jobs completed.
+Those do not agree, and "10 jobs" reads as a company that started last month. No job
+count appears anywhere — worth asking Bill what he meant before adding one.
+
+**BBB.** The form explicitly says they are not a member. No badge, no mention.
 
 ### Address vs. service area
 
-The intake gave a **Washington** address (`22751 E Appleway Ave`) and an **Idaho**
-service ZIP (`83815`). Those are ~14 miles apart across the state line, so the site
-treats them as what they are:
+The form gave a **Tennessee** street address (`2748 SE Tater Peeler Rd, Lebanon TN`)
+and a **Michigan** service area (40-mile radius of Grand Rapids). Those are ~600
+miles apart, so the site is set up as a **service-area business**, which is what
+Google recommends for a contractor who travels to the customer:
 
-- **NAP address** = 22751 E Appleway Ave, **Liberty Lake, WA 99019** — this is what
-  goes on the Google Business Profile, and the footer/schema match it exactly.
-- **Primary campaign target** = **83815** (north Coeur d'Alene, ID), called out
-  explicitly on the Coeur d'Alene page.
-- **Service area** = ~35-mile radius spanning Spokane County WA + Kootenai County ID.
+- **No street address published.** Schema carries `addressLocality: Grand Rapids`,
+  `addressRegion: MI` and a `GeoCircle` service radius. A `PostalAddress` with a
+  blank street is worse than none, so the address block drops the field entirely
+  rather than emitting an empty string.
+- **Primary campaign ZIP** = `49503` (downtown Grand Rapids), called out on the
+  Grand Rapids page.
+- **Service area** = 40-mile radius, 45-mile maximum travel, spanning Kent, Ottawa,
+  Allegan, Ionia and Montcalm counties.
 
-If the business is actually based in Idaho, correct `address` and `location` in
-`businessInfo.ts` and the whole site follows.
+If Bill has a Grand Rapids yard or office address, add it to `address` and it flows
+through the footer, schema and Google Business Profile. If the business is genuinely
+still run from Tennessee, the entire geographic target of the site needs changing —
+say so before launch, not after.
 
 ---
 
 ## Where things live
 
 ```
-src/config/businessInfo.ts   NAP, services, service area, trust claims, form ID
+src/config/businessInfo.ts   NAP, services, service area, warranty, trust claims, form ID
 src/config/media.ts          every photo on the site, with attribution + captions
-src/data/locations.ts        the 13 service-area landing pages
+src/data/locations.ts        the 18 service-area landing pages
 src/types.ts                 Page / NavigateFn
 vite.config.ts               emits sitemap.xml + robots.txt at build time
 public/logo*.svg             logo set (see below)
@@ -67,8 +81,8 @@ everywhere — nothing client-specific is hardcoded in a component.
 
 ## Logo
 
-Hand-built SVG. Asphalt badge with a driveway in perspective, safety-amber seal
-border and centre dashes.
+Hand-built SVG. Asphalt badge with a driveway in perspective, safety-amber border
+and centre dashes.
 
 | File | Use |
 |------|-----|
@@ -87,45 +101,43 @@ that can be produced.
 
 | Token | Hex | Notes |
 |-------|-----|-------|
-| `primary-500` | `#B45309` | Burnt sealer amber. Chosen because it clears WCAG AA **both** as `bg-primary-500 + text-white` (5.0:1) and as `text-primary-500` on white (5.0:1) — so the template's existing white-on-primary buttons stayed valid. |
+| `primary-500` | `#B45309` | Burnt amber. Clears WCAG AA **both** as `bg-primary-500 + text-white` (5.0:1) and as `text-primary-500` on white (5.0:1), so white-on-primary buttons stay valid. |
 | `amber-400/500` | `#FBBF24` / `#F5A524` | Bright safety amber. Accents on dark backgrounds only (9:1 on asphalt) — too pale to read on white. |
 | `charcoal-950` | `#16161A` | Asphalt. Matches the logo badge. |
 
 ## Routes
 
 `/` · `/services` · `/gallery` · `/about` · `/contact` · `/sitemap`
-plus `/seal-coating/<city>` for each of the 13 cities in `locations.ts`.
+plus `/asphalt-paving/<city>` for each of the 18 cities in `locations.ts`.
 
-Client-side routed via `history.pushState` (no router dependency). `public/_redirects`
-sends every non-file path to `index.html`, which is what makes the deep
-`/seal-coating/...` URLs work on Netlify. **On Vercel you need the equivalent
-rewrite** — add a `vercel.json` containing
-`{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}`
-or those pages will 404 on direct load.
+Client-side routed via `history.pushState` (no router dependency). `vercel.json`
+rewrites every non-asset path to `index.html`, which is what makes the deep
+`/asphalt-paving/...` URLs work on direct load. `public/_redirects` does the same on
+Netlify.
+
+The location URL prefix is defined in **two** places that must agree:
+`LOCATION_PREFIX` in `src/App.tsx`, and the sitemap entry in `vite.config.ts`. If
+they drift, the sitemap advertises URLs that 404.
 
 ## Photography
 
-**No photo on this site is presented as Patrick's own completed work.** The template
-came with the previous client's real job photos and videos hosted on their ImageKit
-account; all of those were removed rather than passed off as someone else's.
-
-Everything in `src/config/media.ts` is free-to-use Pexels stock that was visually
-checked to actually show what its caption says — sealer application, hot rubber crack
-sealing, striping, worn asphalt. The gallery page states plainly that the images
-illustrate the trade rather than being completed jobs.
+**No photo on this site is presented as A1's own completed work.** Everything in
+`src/config/media.ts` is free-to-use stock, visually checked to actually show what
+its caption says. The gallery page states plainly that the images illustrate the
+trade rather than being completed jobs.
 
 To switch to real work: fill in `REAL_PROJECT_PHOTOS` in `media.ts`. The gallery
-detects it, drops the disclaimer, and retitles itself "Our Recent Work".
+detects it, drops the disclaimer, and retitles itself "Our Recent Work". Getting
+photos of Bill's actual jobs is the single highest-value upgrade to this site.
 
 ## SEO
 
 - `sitemap.xml` and `robots.txt` are **generated at build time** from
   `businessInfo.ts` + `locations.ts` (see the `seoFiles` plugin in `vite.config.ts`),
-  so the URL list can't drift from the routes that exist. 19 URLs currently.
-- JSON-LD: `HouseholdServices` org + `LocalBusiness` + per-city `Service` +
+  so the URL list cannot drift from the routes that exist. 24 URLs currently.
+- JSON-LD: `GeneralContractor` org + `LocalBusiness` + per-city `Service` +
   `BreadcrumbList` + `FAQPage` (the services-page FAQs are marked up for rich results).
-- `areaServed` labels each city with its own state, so the cross-border WA/ID
-  coverage is machine-readable.
-- The previous client's Google Search Console verification file
-  (`google65e4eba86e82f0a1.html`) was deleted — add Patrick's own once the domain is set.
+- `serviceArea` is a `GeoCircle` around Grand Rapids rather than a postal address,
+  matching how the business actually operates.
+- Add a Google Search Console verification file once the domain is set.
 - Still to add: an `og-image.jpg` at the site root (referenced by `SEOHead` and schema).

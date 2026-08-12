@@ -20,7 +20,7 @@ function seoFiles(): Plugin {
     { loc: '/gallery', priority: '0.7', changefreq: 'monthly' },
     { loc: '/about', priority: '0.7', changefreq: 'monthly' },
     ...LOCATIONS.map((l) => ({
-      loc: `/seal-coating/${l.slug}`,
+      loc: `/asphalt-paving/${l.slug}`,
       priority: l.slug === 'coeur-dalene' ? '0.9' : '0.8',
       changefreq: 'monthly',
     })),
