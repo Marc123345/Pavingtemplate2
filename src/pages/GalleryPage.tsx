@@ -42,7 +42,8 @@ export default function GalleryPage({ onNavigate }: PageProps) {
             What the Work <span className="text-amber-400">Looks Like</span>
           </h1>
           <p className="text-lg md:text-2xl text-charcoal-200 max-w-2xl leading-relaxed">
-            Sealer going down, cracks getting filled, lines going back on.
+            Driveways, private lanes and estate approaches across West Michigan &mdash;
+            base to finished surface.
           </p>
         </div>
 
