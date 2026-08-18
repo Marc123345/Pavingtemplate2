@@ -1,61 +1,28 @@
-import { useEffect, useRef, useState, ReactNode } from 'react';
-import { useIsMobile } from '../hooks/useIsMobile';
+import { ReactNode } from 'react';
 
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
+  /** Accepted and ignored. Kept so the ~53 existing call sites still compile. */
   animation?: 'fade-in-up' | 'fade-in' | 'scale-in';
+  /** Accepted and ignored, as above. */
   delay?: number;
 }
 
-export default function AnimatedSection({
-  children,
-  className = '',
-  animation = 'fade-in-up',
-  delay = 0,
-}: AnimatedSectionProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
-
-  useEffect(() => {
-    if (isMobile) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px',
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isMobile]);
-
-  const animationClassMap = {
-    'fade-in-up': 'animate-fade-in-up',
-    'fade-in': 'animate-fade-in',
-    'scale-in': 'animate-scale-in',
-  };
-
-  const animationClass = isMobile ? '' : (isVisible ? animationClassMap[animation] : 'opacity-0');
-  const delayStyle = isMobile || delay === 0 ? {} : { animationDelay: `${delay}ms` };
-
-  return (
-    <div ref={ref} className={`${animationClass} ${className}`} style={delayStyle}>
-      {children}
-    </div>
-  );
+/**
+ * A plain wrapper.
+ *
+ * This used to hold content at opacity-0 and reveal it with an
+ * IntersectionObserver once it scrolled into view. The scroll animations are
+ * gone, so it renders its children directly and immediately.
+ *
+ * It is deliberately kept as a component rather than deleted: it is used in
+ * about fifty places, and leaving the signature intact — including the now
+ * unused `animation` and `delay` props — meant removing the behaviour in one
+ * file instead of editing every call site. It also means content can never
+ * again be left invisible by a failed observer, which is the failure mode this
+ * pattern has when JavaScript is slow or blocked.
+ */
+export default function AnimatedSection({ children, className = '' }: AnimatedSectionProps) {
+  return <div className={className}>{children}</div>;
 }

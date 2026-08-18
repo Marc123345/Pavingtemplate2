@@ -51,7 +51,6 @@ export default function AboutPage({ onNavigate }: PageProps) {
 
         <motion.div style={{ opacity: heroOpacity }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bebas font-bold mb-4 md:mb-6 leading-none tracking-tight"
@@ -59,7 +58,6 @@ export default function AboutPage({ onNavigate }: PageProps) {
             A LOCAL OUTFIT THAT DOES <span className="text-amber-400">ONE THING</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-2xl text-charcoal-200 max-w-2xl leading-relaxed"
@@ -78,16 +76,10 @@ export default function AboutPage({ onNavigate }: PageProps) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-28"
           >
             <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative group"
             >
@@ -104,9 +96,6 @@ export default function AboutPage({ onNavigate }: PageProps) {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bebas font-bold text-charcoal-950 mb-4 md:mb-6 leading-none tracking-tight">
@@ -141,9 +130,6 @@ export default function AboutPage({ onNavigate }: PageProps) {
 
           {/* Climate section — the local reason this service exists */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
             className="mb-16 md:mb-28"
           >
@@ -196,9 +182,6 @@ export default function AboutPage({ onNavigate }: PageProps) {
 
           {/* Values */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
           >
             <div className="text-center mb-10 md:mb-16">

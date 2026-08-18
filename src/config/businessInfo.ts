@@ -14,7 +14,7 @@
  *   3. website        — no domain chosen yet; canonicals point at the
  *                       deployment URL on purpose.
  *   4. hours          — trade-standard default, not supplied.
- *   5. forms.jotformId — empty until a form exists for THIS business.
+ *   5. forms.jotformId — RESOLVED Aug 2026: A1's own form is live.
  *
  * Deliberately NOT on the site, and why:
  *   • Job count. The form says 15 years in business but roughly 10 jobs
@@ -205,10 +205,17 @@ export const BUSINESS_INFO = {
   projectTypes: ['Residential', 'Commercial', 'Industrial'],
 
   forms: {
-    // ⚠ CONFIRM — empty on purpose. The template shipped with another client's
-    // Jotform ID; leaving it would send A1's leads to them. Drop this
-    // business's own Jotform ID here and the embed switches on.
-    jotformId: '',
+    /**
+     * A1's own form — "Request a Free Estimate", built for this business in
+     * August 2026. It opens with a notice at collection (what is collected,
+     * why, how long it is kept, and the California rights line), which is
+     * required at or before the point of collection under the CCPA.
+     *
+     * This was deliberately empty until now: the template arrived carrying a
+     * previous client's Jotform ID, and leaving that in place would have
+     * delivered A1's leads to another company.
+     */
+    jotformId: '262293013279053',
   },
 
   priceRange: '$$',

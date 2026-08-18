@@ -158,10 +158,37 @@ export default function ContactPage({ onNavigate }: PageProps) {
 
             <AnimatedSection delay={100}>
               {jotformId ? (
-                <div
-                  id="jotform-container"
-                  className="bg-white p-6 md:p-10 border border-ink-200 border-2 border-gray-100 min-h-[600px]"
-                />
+                <div className="bg-white border border-ink-900">
+                  <div className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-500 px-4 py-1.5 border-b border-ink-200 flex justify-between">
+                    <span>Request an estimate</span>
+                    <span>No obligation</span>
+                  </div>
+
+                  {/*
+                    * Notice at collection. Under the CCPA this has to be given
+                    * at or before the point of collection, so it sits above the
+                    * form rather than behind a link — and it is repeated at the
+                    * top of the form itself, because the form is also reachable
+                    * directly on Jotform where this page's copy would not
+                    * travel with it.
+                    */}
+                  <div className="px-6 md:px-8 pt-6 md:pt-8">
+                    <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-ink-500 mb-2">
+                      Notice at collection
+                    </p>
+                    <p className="text-sm text-ink-600 leading-relaxed">
+                      We collect the name, phone number, email address and property address you
+                      enter here, plus any job details you choose to describe. We use it for one
+                      purpose: to contact you about your estimate and carry out the work if you
+                      hire us. We do not sell or share your personal information, and we do not
+                      use it for targeted advertising. We keep enquiry records for up to 24
+                      months. If you are a California resident you may request access to,
+                      correction of, or deletion of your information by calling or emailing us.
+                    </p>
+                  </div>
+
+                  <div id="jotform-container" className="p-4 md:p-6 min-h-[600px]" />
+                </div>
               ) : (
                 /**
                  * No form is wired up yet, on purpose. The template shipped with the

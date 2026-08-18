@@ -62,9 +62,6 @@ export default function HomePage({ onNavigate }: PageProps) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-12 md:mb-16"
           >
@@ -85,9 +82,6 @@ export default function HomePage({ onNavigate }: PageProps) {
 
           <div className="space-y-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="text-center max-w-3xl mx-auto"
             >
@@ -100,9 +94,6 @@ export default function HomePage({ onNavigate }: PageProps) {
 
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 px-4"
             >
@@ -149,9 +140,6 @@ export default function HomePage({ onNavigate }: PageProps) {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-charcoal-950 border border-ink-900 p-6 md:p-8 mx-4"
             >

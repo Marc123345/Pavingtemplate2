@@ -94,9 +94,6 @@ export default function InteractiveValues() {
         {values.map((value, index) => (
           <motion.div
             key={value.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: index * 0.12 }}
             onHoverStart={() => setHoveredValue(index)}
             onHoverEnd={() => setHoveredValue(null)}
@@ -142,14 +139,12 @@ export default function InteractiveValues() {
       <AnimatePresence>
         {selectedValue !== null && (
           <motion.div
-            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedValue(null)}
             className="fixed inset-0 bg-charcoal-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 cursor-pointer"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 40 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 40 }}
               transition={{ type: 'spring', damping: 25 }}
@@ -201,7 +196,6 @@ export default function InteractiveValues() {
                     {values[selectedValue].details.map((detail, idx) => (
                       <motion.div
                         key={detail}
-                        initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.08 }}
                         className="flex items-start gap-3 md:gap-4"

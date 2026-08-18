@@ -58,9 +58,6 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
       <div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-3 md:mb-4 tracking-wide">
@@ -73,9 +70,6 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative bg-charcoal-950 p-4 md:p-6 border-2 border-charcoal-800 border border-ink-900 aspect-square"
         >
@@ -103,16 +97,10 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                     stroke={active ? '#FBBF24' : '#3A3A41'}
                     strokeWidth={active ? 0.5 : 0.2}
                     strokeDasharray="2,2"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
                     transition={{ duration: 1, delay: index * 0.05 }}
                   />
 
                   <motion.g
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                     onHoverStart={() => setHovered(loc.slug)}
                     onHoverEnd={() => setHovered(null)}
@@ -132,8 +120,8 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             })}
 
             {/* home base */}
-            <motion.circle cx={HUB.x} cy={HUB.y} r="3" fill="#FBBF24" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} />
-            <motion.circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#FBBF24" strokeWidth="0.5" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
+            <circle cx={HUB.x} cy={HUB.y} r="3" fill="#F0B429" />
+            <circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#F0B429" strokeWidth="0.5" opacity="0.5" />
             <text x={HUB.x} y={HUB.y + 9} textAnchor="middle" fontSize="2.8" fontWeight="bold" fill="#FBBF24">
               Grand Rapids
             </text>
@@ -151,16 +139,12 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
 
       <div>
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="space-y-4 md:space-y-6"
         >
           {selectedLocation ? (
             <motion.div
               key={selectedLocation.slug}
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-primary-700 text-white p-6 md:p-8 border border-ink-900"
             >
@@ -224,9 +208,6 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             {LOCATIONS.map((loc, index) => (
               <motion.button
                 key={loc.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.35 + index * 0.03 }}
                 onClick={() => setSelected(selected === loc.slug ? null : loc.slug)}
                 onMouseEnter={() => setHovered(loc.slug)}
@@ -251,9 +232,6 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-6 md:mt-8 bg-charcoal-950 text-white p-6 md:p-8 border border-ink-900"
           >
