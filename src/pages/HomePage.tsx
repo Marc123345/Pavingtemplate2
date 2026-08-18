@@ -57,7 +57,7 @@ export default function HomePage({ onNavigate }: PageProps) {
       {/* ── Why the base matters ───────────────────────────────────────── */}
       <section className="relative section-padding bg-gradient-to-br from-primary-50 via-white to-charcoal-50 overflow-hidden texture-overlay">
         <div className="absolute inset-0 diagonal-split bg-gradient-to-br from-primary-100/30 to-transparent" />
-        <div className="absolute top-20 right-10 w-32 h-32 bg-primary-500/10 blur-3xl floating-element" />
+        <div className="absolute top-20 right-10 w-32 h-32 bg-primary-700/10 blur-3xl floating-element" />
         <div className="absolute bottom-32 left-20 w-48 h-48 bg-amber-400/10 blur-3xl floating-element" style={{ animationDelay: '3s' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -69,9 +69,9 @@ export default function HomePage({ onNavigate }: PageProps) {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bebas font-bold text-charcoal-950 mb-4 md:mb-6 leading-tight md:leading-none tracking-tight px-4">
-              SEALING COSTS LESS <span className="text-primary-500">THAN REPLACING</span>
+              SEALING COSTS LESS <span className="text-primary-700">THAN REPLACING</span>
             </h2>
-            <p className="text-xl md:text-xl lg:text-2xl text-primary-600 font-semibold mb-4 md:mb-6 tracking-wide">
+            <p className="text-xl md:text-xl lg:text-2xl text-primary-800 font-semibold mb-4 md:mb-6 tracking-wide">
               Built from the ground up, not just topped off.
             </p>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
@@ -91,7 +91,7 @@ export default function HomePage({ onNavigate }: PageProps) {
               transition={{ duration: 0.6 }}
               className="text-center max-w-3xl mx-auto"
             >
-              <div className="text-base md:text-lg text-gray-700 leading-relaxed italic border-l-4 border-primary-500 pl-4 md:pl-6 bg-primary-50/60 py-4 md:py-5 mb-8 mx-4">
+              <div className="text-base md:text-lg text-gray-700 leading-relaxed italic border-l-4 border-primary-700 pl-4 md:pl-6 bg-primary-50/60 py-4 md:py-5 mb-8 mx-4">
                 <p className="font-semibold text-charcoal-950 mb-2 not-italic">The short version:</p>
                 &ldquo;Water is what destroys asphalt. Sealing keeps it out, and crack filling
                 closes the doors it was getting in through.&rdquo;
@@ -153,10 +153,10 @@ export default function HomePage({ onNavigate }: PageProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-charcoal-950 shadow-theme-lg p-6 md:p-8 mx-4"
+              className="bg-charcoal-950 border border-ink-900 p-6 md:p-8 mx-4"
             >
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 md:gap-6 text-white">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary-700 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
                 <div className="flex-1">
@@ -174,7 +174,7 @@ export default function HomePage({ onNavigate }: PageProps) {
                 </div>
                 <a
                   href={`tel:${phoneRaw}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 rounded-theme transition-colors whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-bold px-6 py-4 transition-colors whitespace-nowrap"
                 >
                   <Phone className="w-5 h-5" />
                   Get a Number
@@ -190,7 +190,7 @@ export default function HomePage({ onNavigate }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-              WHAT WE <span className="text-primary-500">DO</span>
+              WHAT WE <span className="text-primary-700">DO</span>
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
               Asphalt paving is the core of it. Driveways, parking lots, tar and chip,
@@ -220,7 +220,7 @@ export default function HomePage({ onNavigate }: PageProps) {
               <AnimatedSection key={card.title} delay={i * 100}>
                 <button
                   onClick={() => { onNavigate('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="group text-left w-full h-full bg-white border-2 border-gray-100 hover:border-primary-300 shadow-theme hover:shadow-theme-lg transition-all duration-300 overflow-hidden"
+                  className="group text-left w-full h-full bg-white border-2 border-gray-100 hover:border-primary-300 border border-ink-200 hover:border border-ink-900 transition-all duration-300 overflow-hidden"
                 >
                   <div className="relative h-52 overflow-hidden bg-charcoal-900">
                     <img
@@ -232,11 +232,11 @@ export default function HomePage({ onNavigate }: PageProps) {
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 to-transparent" />
                   </div>
                   <div className="p-6 md:p-7">
-                    <h3 className="text-xl md:text-2xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-500 transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-700 transition-colors">
                       {card.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-4">{card.copy}</p>
-                    <span className="text-sm font-semibold text-primary-500 group-hover:translate-x-1 inline-block transition-transform">
+                    <span className="text-sm font-semibold text-primary-700 group-hover:translate-x-1 inline-block transition-transform">
                       See the process &rarr;
                     </span>
                   </div>
@@ -264,7 +264,7 @@ export default function HomePage({ onNavigate }: PageProps) {
             {trustBadges.map((badge, index) => (
               <AnimatedSection key={badge.text} delay={index * 100}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-primary-500 flex items-center justify-center mb-3 md:mb-4">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-primary-700 flex items-center justify-center mb-3 md:mb-4">
                     <badge.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                   </div>
                   <div className="font-bold text-sm md:text-base">{badge.text}</div>
@@ -275,12 +275,12 @@ export default function HomePage({ onNavigate }: PageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative">
-              <div className="absolute -inset-3 bg-primary-500/20 transform rotate-2" />
+              <div className="absolute -inset-3 bg-primary-700/20 transform rotate-2" />
               <img
                 src={media.ESTATE_ENTRANCE.src}
                 alt={media.ESTATE_ENTRANCE.alt}
                 loading="lazy"
-                className="relative w-full shadow-theme-lg"
+                className="relative w-full border border-ink-900"
               />
               <p className="relative mt-3 text-xs text-charcoal-400">{media.ESTATE_ENTRANCE.caption}</p>
             </div>
@@ -318,7 +318,7 @@ export default function HomePage({ onNavigate }: PageProps) {
 
       {/* ── In his customer's words ────────────────────────────────────── */}
       <section className="relative section-padding bg-charcoal-950 overflow-hidden">
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary-500/10 blur-3xl" />
+        <div className="absolute top-20 right-10 w-64 h-64 bg-primary-700/10 blur-3xl" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
             <div className="text-center mb-10 md:mb-14">
@@ -333,7 +333,7 @@ export default function HomePage({ onNavigate }: PageProps) {
 
           <AnimatedSection delay={100}>
             <div className="max-w-sm mx-auto">
-              <VideoPlayer clip={media.TESTIMONIAL_VIDEO} className="shadow-theme-lg" />
+              <VideoPlayer clip={media.TESTIMONIAL_VIDEO} className="border border-ink-900" />
             </div>
           </AnimatedSection>
         </div>
@@ -345,7 +345,7 @@ export default function HomePage({ onNavigate }: PageProps) {
           <AnimatedSection>
             <div className="text-center mb-10 md:mb-14">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-                ON THE <span className="text-primary-500">JOB</span>
+                ON THE <span className="text-primary-700">JOB</span>
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
                 Clips from our own jobs across West Michigan. Tap any one to play it.
@@ -356,7 +356,7 @@ export default function HomePage({ onNavigate }: PageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 items-start">
             {media.WORK_CLIPS.map((clip, i) => (
               <AnimatedSection key={clip.src} delay={(i % 4) * 80}>
-                <VideoPlayer clip={clip} className="shadow-theme" />
+                <VideoPlayer clip={clip} className="border border-ink-200" />
               </AnimatedSection>
             ))}
           </div>

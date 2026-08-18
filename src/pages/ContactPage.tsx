@@ -75,7 +75,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
 
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-700 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -88,7 +88,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-700 flex items-center justify-center flex-shrink-0">
                       <MessageSquare className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -103,7 +103,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-700 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -115,7 +115,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-700 flex items-center justify-center flex-shrink-0">
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -130,7 +130,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-700 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -160,7 +160,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
               {jotformId ? (
                 <div
                   id="jotform-container"
-                  className="bg-white p-6 md:p-10 shadow-theme border-2 border-gray-100 min-h-[600px]"
+                  className="bg-white p-6 md:p-10 border border-ink-200 border-2 border-gray-100 min-h-[600px]"
                 />
               ) : (
                 /**
@@ -183,21 +183,21 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   <div className="space-y-3">
                     <a
                       href={`tel:${phoneRaw}`}
-                      className="flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-primary-700 hover:bg-primary-800 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors min-h-[56px]"
                     >
                       <Phone className="w-5 h-5" />
                       Call {phone}
                     </a>
                     <a
                       href={`sms:${phoneRaw}?body=Hi%20Bill%2C%20I%27d%20like%20a%20seal%20coating%20estimate.%20Address%3A%20`}
-                      className="flex items-center justify-center gap-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors min-h-[56px]"
                     >
                       <MessageSquare className="w-5 h-5" />
                       Text a photo
                     </a>
                     <a
                       href={`mailto:${email}?subject=Seal%20coating%20estimate%20request&body=Property%20address%3A%20%0A%0AApproximate%20size%20(sq%20ft%20or%20number%20of%20cars)%3A%20%0A%0ADriveway%20or%20parking%20lot%3F%20%0A%0AAny%20visible%20cracking%20or%20potholes%3F%20%0A`}
-                      className="flex items-center justify-center gap-3 bg-white border-2 border-primary-300 hover:border-primary-500 text-primary-600 font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-white border-2 border-primary-300 hover:border-primary-700 text-primary-800 font-bold px-6 py-4 text-base md:text-lg transition-colors min-h-[56px]"
                     >
                       <Mail className="w-5 h-5" />
                       Email the details
@@ -220,7 +220,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-              WHERE WE <span className="text-primary-500">WORK</span>
+              WHERE WE <span className="text-primary-700">WORK</span>
             </h2>
             <p className="text-base md:text-lg text-gray-700">
               About {BUSINESS_INFO.serviceArea.radius} miles out from Grand Rapids, across{' '}
@@ -236,15 +236,15 @@ export default function ContactPage({ onNavigate }: PageProps) {
                     onNavigate('location', loc.slug);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="w-full h-full bg-white p-4 shadow-md hover:shadow-theme-md transition-all duration-300 text-left border border-gray-100 hover:border-primary-300 rounded-theme touch-manipulation group"
+                  className="w-full h-full bg-white p-4 border border-ink-900 hover:border border-ink-900 transition-all duration-300 text-left border border-gray-100 hover:border-primary-300 touch-manipulation group"
                 >
-                  <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-500 transition-colors">
+                  <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-700 transition-colors">
                     {loc.city}, {loc.state}
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     {loc.zipCodes.slice(0, 2).join(' · ')}
                   </div>
-                  <div className="text-xs font-semibold text-primary-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  <div className="text-xs font-semibold text-primary-700 mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                     View <ArrowRight className="w-3 h-3" />
                   </div>
                 </button>

@@ -60,7 +60,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
              * replaced by a genuine "our recent work" gallery.
              */
             <div className="flex items-start gap-4 bg-primary-50 border-2 border-primary-200 p-5 md:p-6 mb-10 md:mb-14 max-w-4xl mx-auto">
-              <Info className="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" />
+              <Info className="w-6 h-6 text-primary-800 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold text-charcoal-950 mb-1">
                   These images show the trade, not our own completed jobs.
@@ -77,9 +77,9 @@ export default function GalleryPage({ onNavigate }: PageProps) {
           <div className="text-center mb-10 md:mb-14">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
               {hasRealPhotos ? (
-                <>OUR RECENT <span className="text-primary-500">WORK</span></>
+                <>OUR RECENT <span className="text-primary-700">WORK</span></>
               ) : (
-                <>ASPHALT PAVING, <span className="text-primary-500">STEP BY STEP</span></>
+                <>ASPHALT PAVING, <span className="text-primary-700">STEP BY STEP</span></>
               )}
             </h2>
             <p className="text-base md:text-lg text-gray-700">Tap any image to see it larger</p>
@@ -90,7 +90,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
               <AnimatedSection key={photo.src} delay={(index % 3) * 80}>
                 <button
                   onClick={() => setLightbox(index)}
-                  className="group relative w-full overflow-hidden shadow-theme hover:shadow-theme-lg transition-all duration-500 hover:-translate-y-1 bg-charcoal-900 text-left"
+                  className="group relative w-full overflow-hidden border border-ink-200 hover:border border-ink-900 transition-all duration-500 hover:-translate-y-1 bg-charcoal-900 text-left"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -104,7 +104,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white font-semibold text-sm md:text-base">{photo.caption}</p>
                   </div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-primary-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-primary-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Camera className="w-5 h-5 text-white" />
                   </div>
                 </button>
@@ -152,7 +152,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
               <img
                 src={photos[lightbox].src}
                 alt={photos[lightbox].alt}
-                className="w-full max-h-[75vh] object-contain shadow-theme-lg"
+                className="w-full max-h-[75vh] object-contain border border-ink-900"
               />
               <figcaption className="text-center text-charcoal-200 mt-4 text-sm md:text-base">
                 {photos[lightbox].caption}

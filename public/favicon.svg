@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="A1 Paving">
   <title>A1 Paving</title>
   <!-- Simplified for 16-32px rendering: fewer, heavier elements than logo-mark.svg -->
-  <rect width="64" height="64" rx="12" fill="#16161A"/>
+  <rect width="64" height="64" rx="12" fill="#191C20"/>
   <path d="M12 58 L26 12 H38 L52 58 Z" fill="#3B3B44"/>
-  <g fill="#FACC15">
+  <g fill="#F0B429">
     <rect x="27.5" y="46" width="9" height="10" rx="1.2"/>
     <rect x="28.8" y="31" width="6.4" height="7.5" rx="1"/>
     <rect x="29.8" y="19" width="4.4" height="5.5" rx=".8"/>
   </g>
-  <rect x="2.5" y="2.5" width="59" height="59" rx="10" fill="none" stroke="#FACC15" stroke-width="5"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="10" fill="none" stroke="#F0B429" stroke-width="5"/>
 </svg>

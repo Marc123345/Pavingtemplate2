@@ -105,7 +105,7 @@ export default function InteractiveValues() {
               onClick={() => setSelectedValue(index)}
               whileHover={{ y: -6 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full h-full group bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary-300 overflow-hidden text-left cursor-pointer flex flex-col"
+              className="w-full h-full group bg-white border border-ink-900 hover:border border-ink-900 transition-all duration-500 border-2 border-gray-100 hover:border-primary-300 overflow-hidden text-left cursor-pointer flex flex-col"
             >
               <div className="relative h-48 overflow-hidden bg-charcoal-900">
                 <motion.img
@@ -121,16 +121,16 @@ export default function InteractiveValues() {
                   animate={{ opacity: hoveredValue === index ? 0.9 : 0.7 }}
                   transition={{ duration: 0.4 }}
                 />
-                <div className="absolute bottom-4 left-4 w-14 h-14 bg-primary-500 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-4 left-4 w-14 h-14 bg-primary-700 flex items-center justify-center border border-ink-900 group-hover:scale-110 transition-transform duration-300">
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg md:text-xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-500 transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-700 transition-colors duration-300">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4 flex-1">{value.description}</p>
-                <div className="text-sm font-semibold text-primary-500 group-hover:translate-x-2 transition-transform duration-300">
+                <div className="text-sm font-semibold text-primary-700 group-hover:translate-x-2 transition-transform duration-300">
                   What that means &rarr;
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function InteractiveValues() {
               exit={{ scale: 0.9, opacity: 0, y: 40 }}
               transition={{ type: 'spring', damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl cursor-default"
+              className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-ink-900 cursor-default"
             >
               <div className="relative h-44 md:h-64 overflow-hidden bg-charcoal-900">
                 <img
@@ -171,7 +171,7 @@ export default function InteractiveValues() {
                   <X className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-90 transition-transform duration-300" />
                 </button>
                 <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-primary-500 flex items-center justify-center shadow-xl mb-3">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-primary-700 flex items-center justify-center border border-ink-900 mb-3">
                     {(() => {
                       const IconComponent = values[selectedValue].icon;
                       return <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-white" />;
@@ -185,7 +185,7 @@ export default function InteractiveValues() {
 
               <div className="p-6 md:p-9">
                 <div className="mb-6 md:mb-8">
-                  <p className="text-xl md:text-2xl font-bold text-primary-500 mb-3 italic">
+                  <p className="text-xl md:text-2xl font-bold text-primary-700 mb-3 italic">
                     &ldquo;{values[selectedValue].motto}&rdquo;
                   </p>
                   <p className="text-base md:text-lg text-gray-700 leading-relaxed">
@@ -206,7 +206,7 @@ export default function InteractiveValues() {
                         transition={{ delay: idx * 0.08 }}
                         className="flex items-start gap-3 md:gap-4"
                       >
-                        <div className="w-6 h-6 md:w-7 md:h-7 bg-primary-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 md:w-7 md:h-7 bg-primary-700 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <CheckCircle className="w-4 h-4 text-white" />
                         </div>
                         <p className="text-sm md:text-base text-gray-700 flex-1">{detail}</p>
@@ -218,7 +218,7 @@ export default function InteractiveValues() {
                 <div className="mt-8 pt-6 border-t-2 border-gray-200">
                   <button
                     onClick={() => setSelectedValue(null)}
-                    className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-3.5 px-6 text-base transition-colors duration-300"
+                    className="w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3.5 px-6 text-base transition-colors duration-300"
                   >
                     Close
                   </button>

@@ -154,10 +154,10 @@ export default function Footer({ onNavigate }: FooterProps) {
       </div>
 
       {/* Mobile sticky call bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-charcoal-950/95 backdrop-blur-md border-t-2 border-amber-500/40 p-4 flex gap-3 z-40 safe-area-inset shadow-2xl" style={{ position: 'fixed' }}>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-charcoal-950/95 backdrop-blur-md border-t-2 border-amber-500/40 p-4 flex gap-3 z-40 safe-area-inset border border-ink-900" style={{ position: 'fixed' }}>
         <a
           href={`tel:${phoneRaw}`}
-          className="flex-1 flex items-center justify-center gap-2 bg-primary-500 active:bg-primary-700 px-4 py-3.5 font-bold text-white transition-all duration-200 min-w-0 rounded-xl shadow-lg touch-manipulation min-h-[56px]"
+          className="flex-1 flex items-center justify-center gap-2 bg-primary-700 active:bg-primary-700 px-4 py-3.5 font-bold text-white transition-all duration-200 min-w-0 border border-ink-900 touch-manipulation min-h-[56px]"
           aria-label="Call now for a free asphalt paving estimate"
         >
           <Phone className="w-5 h-5 flex-shrink-0" />
@@ -165,7 +165,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         </a>
         <button
           onClick={() => handleNavigate('contact')}
-          className="flex-1 flex items-center justify-center gap-2 bg-charcoal-800 active:bg-charcoal-700 px-4 py-4 font-bold text-white transition-all duration-200 min-w-0 rounded-xl shadow-lg touch-manipulation min-h-[56px]"
+          className="flex-1 flex items-center justify-center gap-2 bg-charcoal-800 active:bg-charcoal-700 px-4 py-4 font-bold text-white transition-all duration-200 min-w-0 border border-ink-900 touch-manipulation min-h-[56px]"
           aria-label="Request a free estimate"
         >
           <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

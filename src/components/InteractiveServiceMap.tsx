@@ -64,7 +64,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-3 md:mb-4 tracking-wide">
-            WHERE WE <span className="text-primary-500">WORK</span>
+            WHERE WE <span className="text-primary-700">WORK</span>
           </h2>
           <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-8">
             {LOCATIONS.length} cities across Grand Rapids County and Kent County, inside about a{' '}
@@ -77,13 +77,13 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative bg-charcoal-950 p-4 md:p-6 border-2 border-charcoal-800 shadow-2xl aspect-square"
+          className="relative bg-charcoal-950 p-4 md:p-6 border-2 border-charcoal-800 border border-ink-900 aspect-square"
         >
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="hubGlow" cx="57%" cy="47%">
-                <stop offset="0%" stopColor="#FACC15" stopOpacity="0.18" />
-                <stop offset="100%" stopColor="#FACC15" stopOpacity="0" />
+                <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
               </radialGradient>
             </defs>
 
@@ -100,7 +100,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                     y1={HUB.y}
                     x2={pos.x}
                     y2={pos.y}
-                    stroke={active ? '#FACC15' : '#3A3A41'}
+                    stroke={active ? '#FBBF24' : '#3A3A41'}
                     strokeWidth={active ? 0.5 : 0.2}
                     strokeDasharray="2,2"
                     initial={{ pathLength: 0 }}
@@ -119,8 +119,8 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                     onClick={() => setSelected(selected === loc.slug ? null : loc.slug)}
                     style={{ cursor: 'pointer' }}
                   >
-                    <circle cx={pos.x} cy={pos.y} r={active ? 2.5 : 1.8} fill={active ? '#FACC15' : '#15803D'} className="transition-all duration-300" />
-                    <circle cx={pos.x} cy={pos.y} r={active ? 4 : 3} fill="none" stroke={active ? '#FACC15' : '#14532D'} strokeWidth="0.3" opacity={active ? 0.7 : 0.4} className="transition-all duration-300" />
+                    <circle cx={pos.x} cy={pos.y} r={active ? 2.5 : 1.8} fill={active ? '#FBBF24' : '#F59E0B'} className="transition-all duration-300" />
+                    <circle cx={pos.x} cy={pos.y} r={active ? 4 : 3} fill="none" stroke={active ? '#FBBF24' : '#164275'} strokeWidth="0.3" opacity={active ? 0.7 : 0.4} className="transition-all duration-300" />
                     {active && (
                       <text x={pos.x} y={pos.y - 4.5} textAnchor="middle" fontSize="3" fontWeight="bold" fill="#FFFFFF" className="pointer-events-none">
                         {loc.city}
@@ -132,9 +132,9 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             })}
 
             {/* home base */}
-            <motion.circle cx={HUB.x} cy={HUB.y} r="3" fill="#FACC15" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} />
-            <motion.circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#FACC15" strokeWidth="0.5" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
-            <text x={HUB.x} y={HUB.y + 9} textAnchor="middle" fontSize="2.8" fontWeight="bold" fill="#FACC15">
+            <motion.circle cx={HUB.x} cy={HUB.y} r="3" fill="#FBBF24" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} />
+            <motion.circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#FBBF24" strokeWidth="0.5" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
+            <text x={HUB.x} y={HUB.y + 9} textAnchor="middle" fontSize="2.8" fontWeight="bold" fill="#FBBF24">
               Grand Rapids
             </text>
             <text x={HUB.x} y={HUB.y + 12.5} textAnchor="middle" fontSize="2.2" fill="#88888F">
@@ -162,7 +162,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
               key={selectedLocation.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-primary-500 text-white p-6 md:p-8 shadow-2xl"
+              className="bg-primary-700 text-white p-6 md:p-8 border border-ink-900"
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -195,7 +195,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => goToCity(selectedLocation.slug)}
-                  className="flex items-center justify-center gap-2 bg-white text-primary-600 px-5 py-3 font-bold text-sm md:text-base hover:bg-primary-50 transition-colors"
+                  className="flex items-center justify-center gap-2 bg-white text-primary-800 px-5 py-3 font-bold text-sm md:text-base hover:bg-primary-50 transition-colors"
                 >
                   {selectedLocation.city} page
                   <ArrowRight className="w-4 h-4" />
@@ -211,7 +211,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             </motion.div>
           ) : (
             <div className="bg-charcoal-50 p-6 md:p-8 border-2 border-charcoal-200">
-              <MapPin className="w-10 h-10 md:w-12 md:h-12 text-primary-500 mb-3 md:mb-4" />
+              <MapPin className="w-10 h-10 md:w-12 md:h-12 text-primary-700 mb-3 md:mb-4" />
               <h3 className="text-xl md:text-2xl font-bold text-charcoal-950 mb-2">Pick a city</h3>
               <p className="text-sm md:text-base text-gray-600">
                 Tap any marker or name to see the ZIP codes we cover there and the work we
@@ -233,14 +233,14 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                 onMouseLeave={() => setHovered(null)}
                 className={`p-3 md:p-4 text-left text-sm md:text-base font-semibold transition-all duration-300 border-2 ${
                   selected === loc.slug
-                    ? 'bg-primary-500 text-white border-primary-600 shadow-xl'
+                    ? 'bg-primary-700 text-white border-primary-800 border border-ink-900'
                     : hovered === loc.slug
                     ? 'bg-primary-50 text-charcoal-950 border-primary-400'
                     : 'bg-white text-charcoal-950 border-gray-200 hover:border-primary-300'
                 }`}
               >
                 <span className="flex items-center gap-1.5">
-                  <MapPin className={`w-3.5 h-3.5 flex-shrink-0 ${selected === loc.slug ? 'text-white' : 'text-primary-500'}`} />
+                  <MapPin className={`w-3.5 h-3.5 flex-shrink-0 ${selected === loc.slug ? 'text-white' : 'text-primary-700'}`} />
                   <span className="truncate">{loc.city}</span>
                   <span className={`ml-auto text-xs font-normal ${selected === loc.slug ? 'text-primary-100' : 'text-gray-400'}`}>
                     {loc.state}
@@ -255,7 +255,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-6 md:mt-8 bg-charcoal-950 text-white p-6 md:p-8 shadow-2xl"
+            className="mt-6 md:mt-8 bg-charcoal-950 text-white p-6 md:p-8 border border-ink-900"
           >
             <h3 className="text-xl md:text-2xl font-bebas font-bold mb-3 tracking-wide">
               NOT ON THE LIST?
@@ -266,7 +266,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             </p>
             <a
               href={`tel:${phoneRaw}`}
-              className="inline-flex items-center justify-center gap-2 md:gap-3 bg-primary-500 hover:bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 font-bold text-base md:text-lg transition-colors w-full sm:w-auto rounded-md"
+              className="inline-flex items-center justify-center gap-2 md:gap-3 bg-primary-700 hover:bg-primary-800 text-white px-6 md:px-8 py-3 md:py-4 font-bold text-base md:text-lg transition-colors w-full sm:w-auto"
             >
               <Phone className="w-5 h-5" />
               {phone}

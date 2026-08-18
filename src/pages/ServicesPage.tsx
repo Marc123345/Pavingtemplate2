@@ -199,7 +199,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-              WHAT WE <span className="text-primary-500">TAKE ON</span>
+              WHAT WE <span className="text-primary-700">TAKE ON</span>
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
               Residential, commercial and industrial. Asphalt paving and everything that has to happen
@@ -210,8 +210,8 @@ export default function ServicesPage({ onNavigate }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 60}>
-                <div className="h-full bg-white p-6 md:p-7 border-2 border-gray-100 hover:border-primary-300 shadow-theme hover:shadow-theme-lg transition-all duration-300">
-                  <div className="w-14 h-14 bg-primary-500 flex items-center justify-center mb-5">
+                <div className="h-full bg-white p-6 md:p-7 border-2 border-gray-100 hover:border-primary-300 border border-ink-200 hover:border border-ink-900 transition-all duration-300">
+                  <div className="w-14 h-14 bg-primary-700 flex items-center justify-center mb-5">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-charcoal-950 mb-3">{service.title}</h3>
@@ -238,10 +238,10 @@ export default function ServicesPage({ onNavigate }: PageProps) {
           <div className="space-y-5">
             {PROCESS.map((step, index) => (
               <AnimatedSection key={step.number} delay={index * 70}>
-                <div className="group bg-charcoal-900 border border-charcoal-800 hover:border-primary-500/60 transition-all duration-300">
+                <div className="group bg-charcoal-900 border border-charcoal-800 hover:border-primary-700/60 transition-all duration-300">
                   <div className="flex flex-col sm:flex-row items-start gap-5 md:gap-6 p-6 md:p-8">
                     <div className="flex items-center gap-4 sm:flex-col sm:items-center flex-shrink-0">
-                      <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-500 flex items-center justify-center text-xl md:text-2xl font-bold text-white">
+                      <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-700 flex items-center justify-center text-xl md:text-2xl font-bold text-white">
                         {step.number}
                       </div>
                       <step.icon className="w-6 h-6 text-amber-400 sm:mt-3" />
@@ -271,14 +271,14 @@ export default function ServicesPage({ onNavigate }: PageProps) {
                   src={media.RAKING_EDGE.src}
                   alt={media.RAKING_EDGE.alt}
                   loading="lazy"
-                  className="relative w-full shadow-theme-lg"
+                  className="relative w-full border border-ink-900"
                 />
                 <p className="relative mt-3 text-xs text-gray-500">{media.RAKING_EDGE.caption}</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={120}>
               <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-5 tracking-wide">
-                THE CRACKS ARE THE <span className="text-primary-500">WHOLE PROBLEM</span>
+                THE CRACKS ARE THE <span className="text-primary-700">WHOLE PROBLEM</span>
               </h2>
               <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-5">
                 Asphalt almost never fails from the top down. It fails because water gets
@@ -298,7 +298,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
                   'Honest call if the surface is too far gone to be worth sealing',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-3 text-charcoal-900">
-                    <span className="mt-2 w-2 h-2 bg-primary-500 flex-shrink-0" />
+                    <span className="mt-2 w-2 h-2 bg-primary-700 flex-shrink-0" />
                     <span>{line}</span>
                   </li>
                 ))}
@@ -313,7 +313,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-              COMMON <span className="text-primary-500">QUESTIONS</span>
+              COMMON <span className="text-primary-700">QUESTIONS</span>
             </h2>
             <p className="text-base md:text-lg text-gray-700">Straight answers about asphalt paving</p>
           </div>
@@ -326,13 +326,13 @@ export default function ServicesPage({ onNavigate }: PageProps) {
                   <button
                     onClick={() => setExpandedFaq(open ? null : index)}
                     aria-expanded={open}
-                    className="w-full px-5 md:px-8 py-5 md:py-6 text-left flex justify-between items-center gap-4 bg-white hover:bg-primary-50/50 border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 shadow-theme"
+                    className="w-full px-5 md:px-8 py-5 md:py-6 text-left flex justify-between items-center gap-4 bg-white hover:bg-primary-50/50 border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 border border-ink-200"
                   >
                     <span className="font-bold text-base md:text-lg text-charcoal-950">
                       {faq.question}
                     </span>
-                    <div className={`flex-shrink-0 w-8 h-8 bg-primary-100 flex items-center justify-center transition-all duration-300 ${open ? 'rotate-45 bg-primary-500' : ''}`}>
-                      <span className={`font-bold text-xl leading-none ${open ? 'text-white' : 'text-primary-600'}`}>+</span>
+                    <div className={`flex-shrink-0 w-8 h-8 bg-primary-100 flex items-center justify-center transition-all duration-300 ${open ? 'rotate-45 bg-primary-700' : ''}`}>
+                      <span className={`font-bold text-xl leading-none ${open ? 'text-white' : 'text-primary-800'}`}>+</span>
                     </div>
                   </button>
 

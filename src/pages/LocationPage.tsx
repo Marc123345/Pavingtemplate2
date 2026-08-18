@@ -25,7 +25,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
           <h1 className="text-3xl font-bold text-charcoal-950 mb-4">Area not found</h1>
           <button
             onClick={() => onNavigate('home')}
-            className="text-primary-500 font-semibold hover:underline"
+            className="text-primary-700 font-semibold hover:underline"
           >
             Back to the homepage
           </button>
@@ -75,7 +75,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal-950 via-charcoal-950/85 to-primary-950/70" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 mb-6">
             <MapPin className="w-4 h-4" />
             <span className="text-sm font-bold tracking-wide uppercase">
               {miles === 0 ? 'Our home base' : `About ${miles} mi ${direction} of our yard`}
@@ -93,14 +93,14 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
           <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <a
               href={`tel:${phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-7 py-4 transition-colors rounded-theme min-h-[56px]"
+              className="inline-flex items-center justify-center gap-3 bg-primary-700 hover:bg-primary-800 text-white font-bold px-7 py-4 transition-colors min-h-[56px]"
             >
               <Phone className="w-5 h-5" />
               Call {phone}
             </a>
             <a
               href={`sms:${phoneRaw}?body=Hi%20Bill%2C%20I%27d%20like%20a%20seal%20coating%20estimate%20in%20${encodeURIComponent(city)}.`}
-              className="inline-flex items-center justify-center gap-3 border-2 border-charcoal-600 hover:border-amber-400 hover:text-amber-400 text-white font-bold px-7 py-4 transition-colors rounded-theme min-h-[56px]"
+              className="inline-flex items-center justify-center gap-3 border-2 border-charcoal-600 hover:border-amber-400 hover:text-amber-400 text-white font-bold px-7 py-4 transition-colors min-h-[56px]"
             >
               <MessageSquare className="w-5 h-5" />
               Text us
@@ -122,7 +122,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <AnimatedSection>
               <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-6 tracking-wide">
-                ASPHALT PAVING IN <span className="text-primary-500">{city.toUpperCase()}</span>
+                ASPHALT PAVING IN <span className="text-primary-700">{city.toUpperCase()}</span>
               </h2>
               <div className="space-y-5 text-base md:text-lg text-gray-700 leading-relaxed">
                 <p>{intro}</p>
@@ -164,14 +164,14 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
             </AnimatedSection>
 
             <AnimatedSection delay={120}>
-              <div className="bg-charcoal-950 text-white p-7 md:p-9 shadow-theme-lg">
+              <div className="bg-charcoal-950 text-white p-7 md:p-9 border border-ink-900">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">
                   What we get called out for in {city}
                 </h3>
                 <ul className="space-y-4 mb-8">
                   {commonWork.map((work) => (
                     <li key={work} className="flex items-start gap-4">
-                      <div className="w-7 h-7 bg-primary-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-7 h-7 bg-primary-700 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-charcoal-200">{work}</span>
@@ -186,7 +186,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
                   </p>
                   <a
                     href={`tel:${phoneRaw}`}
-                    className="w-full inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white px-6 py-4 text-lg font-bold transition-colors rounded-theme"
+                    className="w-full inline-flex items-center justify-center gap-3 bg-primary-700 hover:bg-primary-800 text-white px-6 py-4 text-lg font-bold transition-colors"
                   >
                     <Phone className="w-5 h-5" />
                     {phone}
@@ -199,7 +199,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
                   src={media.CURVED_DRIVE.thumb}
                   alt={media.CURVED_DRIVE.alt}
                   loading="lazy"
-                  className="w-full shadow-theme"
+                  className="w-full border border-ink-200"
                 />
                 <p className="mt-2 text-xs text-gray-500">{media.CURVED_DRIVE.caption}</p>
               </div>
@@ -213,7 +213,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-14">
             <h2 className="text-3xl md:text-4xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-              EVERYTHING WE OFFER IN <span className="text-primary-500">{city.toUpperCase()}</span>
+              EVERYTHING WE OFFER IN <span className="text-primary-700">{city.toUpperCase()}</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -221,9 +221,9 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
               <AnimatedSection key={service} delay={i * 40}>
                 <button
                   onClick={() => { onNavigate('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="w-full h-full text-left bg-white p-5 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-theme transition-all duration-300 group"
+                  className="w-full h-full text-left bg-white p-5 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:border border-ink-200 transition-all duration-300 group"
                 >
-                  <span className="block font-semibold text-charcoal-950 group-hover:text-primary-500 transition-colors">
+                  <span className="block font-semibold text-charcoal-950 group-hover:text-primary-700 transition-colors">
                     {service}
                   </span>
                 </button>
@@ -238,20 +238,20 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
         <section className="section-padding bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-bebas font-bold text-charcoal-950 mb-8 tracking-wide text-center">
-              ALSO SERVING NEARBY IN <span className="text-primary-500">{stateName.toUpperCase()}</span>
+              ALSO SERVING NEARBY IN <span className="text-primary-700">{stateName.toUpperCase()}</span>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
               {nearby.map((loc) => (
                 <button
                   key={loc.slug}
                   onClick={() => { onNavigate('location', loc.slug); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="group bg-white p-4 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-theme transition-all duration-300 text-left"
+                  className="group bg-white p-4 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:border border-ink-200 transition-all duration-300 text-left"
                 >
-                  <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-500 transition-colors">
+                  <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-700 transition-colors">
                     {loc.city}
                   </div>
                   <div className="text-xs text-gray-500 mt-1">{loc.county}</div>
-                  <div className="text-xs font-semibold text-primary-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  <div className="text-xs font-semibold text-primary-700 mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                     View <ArrowRight className="w-3 h-3" />
                   </div>
                 </button>

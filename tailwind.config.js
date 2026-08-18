@@ -4,89 +4,105 @@ export default {
   theme: {
     extend: {
       /**
-       * Dustrix runs on Poppins alone. `anton` and `bebas` are kept as aliases
-       * pointing at it so the 33 existing `font-anton` / `font-bebas` usages
-       * keep working through the switch — they are display slots now, not
-       * references to those faces. New work should use `font-display`.
+       * Summit Paving design system.
+       *
+       * The governing idea is linework, not shadows: panels are separated by
+       * ruled borders the way a drawing set is, corners are square, and depth
+       * comes from weight of rule rather than from blur. Buttons take mono
+       * uppercase labels because everything measured on the sheet is mono.
+       *
+       * `primary` and `charcoal` are kept as aliases onto blue and ink — over
+       * 200 class usages across the site already point at those names, and
+       * renaming them would be a large mechanical edit for no visual change.
        */
       fontFamily: {
-        sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        anton: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        bebas: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['IBM Plex Sans', 'Helvetica Neue', '-apple-system', 'sans-serif'],
+        body: ['IBM Plex Sans', 'Helvetica Neue', '-apple-system', 'sans-serif'],
+        display: ['Barlow Condensed', 'Arial Narrow', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'Courier New', 'monospace'],
+        /* Display slots inherited from the previous system. */
+        anton: ['Barlow Condensed', 'Arial Narrow', 'sans-serif'],
+        bebas: ['Barlow Condensed', 'Arial Narrow', 'sans-serif'],
       },
+
       colors: {
-        /**
-         * Brand: deep green, drawn from the lawns that frame nearly every one
-         * of A1's job photographs — and a deliberate step away from a trade
-         * where almost every competitor is orange or yellow.
-         *
-         * 500 is dark enough that BOTH `bg-primary-500 + text-white` and
-         * `text-primary-500` on white clear WCAG AA, at 5.02:1. That is the
-         * same ratio the previous burnt amber carried, so it is a genuine
-         * drop-in: no existing colour pairing needed reworking.
-         *
-         * Safety yellow stays as the accent on dark backgrounds — it is the
-         * colour of the machines and vests in the photos, and reads at 11.8:1
-         * on asphalt. It lives in Tailwind's built-in `amber-400/yellow-400`.
-         */
-        primary: {
-          50: '#F0FDF4',
-          100: '#DCFCE7',
-          200: '#BBF7D0',
-          300: '#86EFAC',
-          400: '#34D399',
-          500: '#15803D',
-          600: '#166534',
-          700: '#14532D',
-          800: '#123F23',
-          900: '#0F3319',
-          950: '#052E16',
+        paper: '#F6F5F1',
+
+        /** Ink — asphalt-derived neutrals. */
+        ink: {
+          100: '#E9EBED', 200: '#D6DADE', 300: '#B4BAC1', 400: '#8A939D',
+          500: '#636C76', 600: '#4A525B', 700: '#333940', 800: '#23272C',
+          900: '#191C20', 950: '#131518',
         },
-        /** Asphalt. 950 matches the logo badge. */
         charcoal: {
-          50: '#F6F6F7',
-          100: '#E7E7E9',
-          200: '#D1D1D5',
-          300: '#B0B0B6',
-          400: '#88888F',
-          500: '#6D6D75',
-          600: '#5D5D64',
-          700: '#4F4F56',
-          800: '#3A3A41',
-          900: '#26262B',
-          950: '#16161A',
+          50: '#F6F5F1', 100: '#E9EBED', 200: '#D6DADE', 300: '#B4BAC1',
+          400: '#8A939D', 500: '#636C76', 600: '#4A525B', 700: '#333940',
+          800: '#23272C', 900: '#191C20', 950: '#131518',
         },
+
+        /** Drafting blue. */
+        blue: {
+          tint: '#E8F0F9', soft: '#C9DCF0',
+          DEFAULT: '#1E5AA8', hover: '#164275', deep: '#0F2E5C',
+        },
+        primary: {
+          50: '#E8F0F9', 100: '#E8F0F9', 200: '#C9DCF0', 300: '#C9DCF0',
+          400: '#1E5AA8', 500: '#1E5AA8', 600: '#164275', 700: '#1E5AA8',
+          800: '#164275', 900: '#0F2E5C', 950: '#0F2E5C',
+        },
+
+        /** Marking paint — line-striping yellow. One action per page. */
+        paint: { DEFAULT: '#F0B429', hover: '#E09E17' },
+
+        pass: { DEFAULT: '#1F7A3D', bg: '#E7F2EA' },
+        hold: { DEFAULT: '#8A5A00', bg: '#F7EFD9' },
+        fault: { DEFAULT: '#B42318', bg: '#F9E9E6' },
       },
-      /**
-       * Dustrix's headline scale: 80px / 60px / 36px with tracking pulled
-       * tight and negative. The negative tracking is what stops Poppins — a
-       * geometric face with generous default sidebearings — from reading soft
-       * at display size, and it is doing the job the condensed face used to.
-       */
+
+      /** Condensed display takes positive tracking; a condensed face closes up at size. */
       fontSize: {
-        'display-lg': ['5rem', { lineHeight: '1.15', letterSpacing: '-0.05em', fontWeight: '800' }],
-        'display': ['3.75rem', { lineHeight: '1.16', letterSpacing: '-0.04em', fontWeight: '800' }],
-        'display-sm': ['2.25rem', { lineHeight: '1.3', letterSpacing: '-0.02em', fontWeight: '700' }],
+        xs: ['0.75rem', { lineHeight: '1.5' }],
+        sm: ['0.875rem', { lineHeight: '1.55' }],
+        base: ['0.9375rem', { lineHeight: '1.65' }],
+        lg: ['1.0625rem', { lineHeight: '1.6' }],
+        xl: ['1.25rem', { lineHeight: '1.4' }],
+        '2xl': ['1.375rem', { lineHeight: '1.25' }],
+        '3xl': ['1.75rem', { lineHeight: '1.1' }],
+        '4xl': ['2.5rem', { lineHeight: '1' }],
+        '5xl': ['3.5rem', { lineHeight: '0.98' }],
+        '6xl': ['4.25rem', { lineHeight: '0.95' }],
+        'display-lg': ['4.25rem', { lineHeight: '0.95', letterSpacing: '0.01em', fontWeight: '700' }],
+        'display': ['3.5rem', { lineHeight: '0.98', letterSpacing: '0.01em', fontWeight: '700' }],
+        'display-sm': ['2.5rem', { lineHeight: '1', letterSpacing: '0.01em', fontWeight: '700' }],
       },
+
+      /** 4px module. */
       spacing: {
-        '18': '4.5rem',
-        '112': '28rem',
-        '128': '32rem',
+        '18': '4.5rem', '112': '28rem', '128': '32rem',
       },
+
+      /** Square. The system has no rounded corners at all. */
       borderRadius: {
-        /** Dustrix's button and card radius. */
-        theme: '10px',
+        theme: '0px', xs: '0px', sm: '0px', lg: '0px', pill: '9999px',
       },
+
+      borderWidth: { hair: '1px', line: '1px', heavy: '2px', control: '1.5px' },
+
+      /**
+       * Depth is linework here, so the shadow tokens resolve to none. They are
+       * kept as names because ~40 usages reference them; leaving them defined
+       * and empty is what stops a stray `shadow-theme-lg` reintroducing the
+       * blur this system is built to avoid.
+       */
       boxShadow: {
-        /** Dustrix's card lift — wide, soft and very light. */
-        theme: '0px 16px 32px 0px rgba(0, 0, 0, 0.04)',
-        'theme-md': '0px 16px 32px 0px rgba(0, 0, 0, 0.05)',
-        'theme-lg': '0px 16px 32px 0px rgba(0, 0, 0, 0.10)',
+        theme: 'none', 'theme-md': 'none', 'theme-lg': 'none',
+        sm: 'none', md: 'none', lg: 'none', xl: 'none',
+        /** The one legitimate shadow: a hard offset, used on focus. */
+        control: '2px 2px 0 #C9DCF0',
       },
-      transitionDuration: {
-        '400': '400ms',
-      },
+
+      transitionTimingFunction: { theme: 'linear' },
+      transitionDuration: { '120': '120ms', '200': '200ms', '320': '320ms', '400': '400ms' },
     },
   },
   plugins: [],

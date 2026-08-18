@@ -68,10 +68,10 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
                 <button
                   key={link.page}
                   onClick={() => go(link.page)}
-                  className="group text-left bg-charcoal-800/50 border border-charcoal-700 rounded-lg p-6 hover:border-amber-500/60 hover:bg-charcoal-800 transition-all duration-300"
+                  className="group text-left bg-charcoal-800/50 border border-charcoal-700 p-6 hover:border-amber-500/60 hover:bg-charcoal-800 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300 flex-shrink-0">
                       <link.icon className="w-6 h-6 text-amber-400" />
                     </div>
                     <div className="flex-1">
@@ -95,10 +95,10 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
                 <button
                   key={loc.slug}
                   onClick={() => go('location', loc.slug)}
-                  className="group text-left bg-charcoal-800/50 border border-charcoal-700 rounded-lg p-6 hover:border-amber-500/60 hover:bg-charcoal-800 transition-all duration-300"
+                  className="group text-left bg-charcoal-800/50 border border-charcoal-700 p-6 hover:border-amber-500/60 hover:bg-charcoal-800 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300 flex-shrink-0">
                       <MapPin className="w-6 h-6 text-amber-400" />
                     </div>
                     <div className="flex-1">
@@ -115,7 +115,7 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-500/10 to-primary-500/5 border border-amber-500/20 rounded-xl p-7 md:p-9">
+          <div className="bg-gradient-to-br from-amber-500/10 to-primary-700/5 border border-amber-500/20 p-7 md:p-9">
             <div className="text-center">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
                 Can&rsquo;t find what you need?
@@ -126,14 +126,14 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href={`tel:${phoneRaw}`}
-                  className="px-8 py-3.5 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-3.5 bg-primary-700 text-white font-semibold hover:bg-primary-800 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
                   {phone}
                 </a>
                 <button
                   onClick={() => go('contact')}
-                  className="px-8 py-3.5 bg-charcoal-800 border border-amber-500/30 text-white font-semibold rounded-lg hover:border-amber-500 hover:bg-charcoal-700 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                  className="px-8 py-3.5 bg-charcoal-800 border border-amber-500/30 text-white font-semibold hover:border-amber-500 hover:bg-charcoal-700 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Request an estimate
                 </button>
@@ -148,7 +148,7 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
                 href="/sitemap.xml"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-charcoal-800 border border-charcoal-700 text-charcoal-300 rounded-lg hover:border-amber-500/50 hover:text-white transition-all duration-300"
+                className="px-6 py-2 bg-charcoal-800 border border-charcoal-700 text-charcoal-300 hover:border-amber-500/50 hover:text-white transition-all duration-300"
               >
                 XML Sitemap
               </a>
@@ -156,7 +156,7 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
                 href="/robots.txt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-charcoal-800 border border-charcoal-700 text-charcoal-300 rounded-lg hover:border-amber-500/50 hover:text-white transition-all duration-300"
+                className="px-6 py-2 bg-charcoal-800 border border-charcoal-700 text-charcoal-300 hover:border-amber-500/50 hover:text-white transition-all duration-300"
               >
                 Robots.txt
               </a>

@@ -73,7 +73,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
 
       {/* Story */}
       <section className="section-padding bg-gradient-to-br from-white via-primary-50 to-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500/10 blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-700/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-400/10 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -91,8 +91,8 @@ export default function AboutPage({ onNavigate }: PageProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative group"
             >
-              <div className="absolute -inset-4 bg-primary-500/20 transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative overflow-hidden shadow-theme-lg">
+              <div className="absolute -inset-4 bg-primary-700/20 transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
+              <div className="relative overflow-hidden border border-ink-900">
                 <img
                   src={media.RESIDENTIAL_STREET.src}
                   alt={media.RESIDENTIAL_STREET.alt}
@@ -110,7 +110,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bebas font-bold text-charcoal-950 mb-4 md:mb-6 leading-none tracking-tight">
-                WHY THE <span className="text-primary-500">BASE</span> MATTERS MOST
+                WHY THE <span className="text-primary-700">BASE</span> MATTERS MOST
               </h2>
               <div className="space-y-5">
                 <p className="text-base md:text-xl text-gray-700 leading-relaxed">
@@ -129,7 +129,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
                   Valley and most of Kent County within a short drive. You call the
                   number and you get Bill, not a call centre.
                 </p>
-                <div className="bg-charcoal-950 text-white p-5 md:p-6 shadow-theme-md">
+                <div className="bg-charcoal-950 text-white p-5 md:p-6 border border-ink-900">
                   <p className="text-base md:text-lg font-semibold">
                     If sealing is not the right call for your surface, we will say so. Coating
                     over a failing driveway is a way to take someone&rsquo;s money twice.
@@ -149,7 +149,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
           >
             <div className="text-center mb-10 md:mb-14">
               <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
-                WHAT THIS CLIMATE DOES <span className="text-primary-500">TO ASPHALT</span>
+                WHAT THIS CLIMATE DOES <span className="text-primary-700">TO ASPHALT</span>
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
                 The Inland Northwest is about as hard on pavement as it gets &mdash; hot dry
@@ -176,8 +176,8 @@ export default function AboutPage({ onNavigate }: PageProps) {
                 },
               ].map((item, i) => (
                 <AnimatedSection key={item.title} delay={i * 100}>
-                  <div className="h-full bg-white p-6 md:p-8 border-2 border-gray-100 shadow-theme">
-                    <div className="w-14 h-14 bg-primary-500 flex items-center justify-center mb-5">
+                  <div className="h-full bg-white p-6 md:p-8 border-2 border-gray-100 border border-ink-200">
+                    <div className="w-14 h-14 bg-primary-700 flex items-center justify-center mb-5">
                       <item.icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-charcoal-950 mb-3">{item.title}</h3>
@@ -203,7 +203,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
           >
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bebas font-bold text-charcoal-950 mb-4 md:mb-6 leading-none tracking-tight">
-                HOW WE <span className="text-primary-500">WORK</span>
+                HOW WE <span className="text-primary-700">WORK</span>
               </h2>
               <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto px-4">
                 Four commitments on every job, residential or commercial

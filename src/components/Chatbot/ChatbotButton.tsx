@@ -11,7 +11,7 @@ export default function ChatbotButton({ isOpen, onClick, unreadCount = 0 }: Chat
   return (
     <motion.button
       onClick={onClick}
-      className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 w-16 h-16 md:w-16 md:h-16 bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white shadow-2xl rounded-full flex items-center justify-center transition-colors duration-200 touch-manipulation border-4 border-white"
+      className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 w-16 h-16 md:w-16 md:h-16 bg-primary-700 hover:bg-primary-800 active:bg-primary-700 text-white border border-ink-900 rounded-full flex items-center justify-center transition-colors duration-200 touch-manipulation border-4 border-white"
       style={{ position: 'fixed' }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

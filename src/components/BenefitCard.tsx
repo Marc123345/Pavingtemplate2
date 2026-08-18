@@ -39,7 +39,7 @@ export default function BenefitCard({ icon: Icon, title, description, index }: B
             <Icon className="w-10 h-10" />
           </motion.div>
 
-          <h3 className="text-xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-800 transition-colors duration-300">
             {title}
           </h3>
 
@@ -55,7 +55,7 @@ export default function BenefitCard({ icon: Icon, title, description, index }: B
             opacity: isHovered ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="absolute -bottom-2 -right-2 w-24 h-24 bg-primary-500/10 blur-2xl"
+          className="absolute -bottom-2 -right-2 w-24 h-24 bg-primary-700/10 blur-2xl"
         />
       </div>
     </motion.div>

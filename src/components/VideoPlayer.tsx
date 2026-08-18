@@ -60,10 +60,10 @@ export default function VideoPlayer({ clip, className = '', shape }: Props) {
           className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-charcoal-950/35 hover:bg-charcoal-950/20 transition-colors duration-300 group"
           aria-label={`Play video: ${clip.title}`}
         >
-          <span className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary-500 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+          <span className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary-700 flex items-center justify-center border border-ink-900 group-hover:scale-110 transition-transform duration-300">
             <Play className="w-7 h-7 md:w-9 md:h-9 text-white translate-x-0.5" fill="currentColor" />
           </span>
-          <span className="text-white font-semibold text-sm md:text-base px-4 text-center drop-shadow-lg">
+          <span className="text-white font-semibold text-sm md:text-base px-4 text-center drop-border border-ink-900">
             {clip.title}
           </span>
         </button>

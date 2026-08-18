@@ -76,7 +76,7 @@ export default function SEOHead({
       { name: 'geo.position', content: `${geo.latitude};${geo.longitude}` },
       { name: 'ICBM', content: `${geo.latitude}, ${geo.longitude}` },
 
-      { name: 'theme-color', content: '#16161A' },
+      { name: 'theme-color', content: '#0B1220' },
       { name: 'format-detection', content: 'telephone=yes' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },

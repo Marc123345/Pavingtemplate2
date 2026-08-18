@@ -117,7 +117,7 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="fixed bottom-24 right-4 md:right-6 z-40 w-[calc(100vw-2rem)] md:w-[400px] h-[520px] md:h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200"
+      className="fixed bottom-24 right-4 md:right-6 z-40 w-[calc(100vw-2rem)] md:w-[400px] h-[520px] md:h-[600px] bg-white border border-ink-900 flex flex-col overflow-hidden border border-gray-200"
       style={{ maxWidth: '400px' }}
       role="dialog"
       aria-label="Chat with A1 Paving"
@@ -144,9 +144,9 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
           >
             <div className="max-w-[85%]">
               <div
-                className={`p-3 whitespace-pre-wrap rounded-2xl shadow-sm ${
+                className={`p-3 whitespace-pre-wrap shadow-sm ${
                   message.sender === 'user'
-                    ? 'bg-primary-500 text-white rounded-br-md'
+                    ? 'bg-primary-700 text-white rounded-br-md'
                     : 'bg-white text-charcoal-900 border border-gray-200 rounded-bl-md'
                 }`}
               >
@@ -158,7 +158,7 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
                     <button
                       key={option}
                       onClick={() => handleSendMessage(option)}
-                      className="block w-full text-left text-sm px-3 py-2 bg-white hover:bg-primary-50 text-charcoal-700 hover:text-primary-600 border border-gray-200 hover:border-primary-300 rounded-lg transition-colors duration-200 shadow-sm"
+                      className="block w-full text-left text-sm px-3 py-2 bg-white hover:bg-primary-50 text-charcoal-700 hover:text-primary-800 border border-gray-200 hover:border-primary-300 transition-colors duration-200 shadow-sm"
                     >
                       {option}
                     </button>
@@ -171,7 +171,7 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
 
         {isTyping && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
-            <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md p-3 shadow-sm">
+            <div className="bg-white border border-gray-200 rounded-bl-md p-3 shadow-sm">
               <div className="flex gap-1">
                 {[0, 0.1, 0.2].map((delay) => (
                   <motion.div
@@ -193,14 +193,14 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
         <div className="grid grid-cols-2 gap-2 mb-3">
           <a
             href={`tel:${phoneRaw}`}
-            className="flex items-center justify-center gap-2 px-3 py-3 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-xl transition-colors duration-200 shadow-md text-sm"
+            className="flex items-center justify-center gap-2 px-3 py-3 bg-primary-700 hover:bg-primary-800 text-white font-semibold transition-colors duration-200 border border-ink-900 text-sm"
           >
             <Phone className="w-4 h-4" />
             <span>Call</span>
           </a>
           <a
             href={`sms:${phoneRaw}`}
-            className="flex items-center justify-center gap-2 px-3 py-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-semibold rounded-xl transition-colors duration-200 shadow-md text-sm"
+            className="flex items-center justify-center gap-2 px-3 py-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-semibold transition-colors duration-200 border border-ink-900 text-sm"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Text</span>
@@ -215,20 +215,20 @@ export default function ChatbotWindow({ isOpen }: ChatbotWindowProps) {
             onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
             placeholder="Type your question…"
             aria-label="Type your question"
-            className="flex-1 px-4 py-2.5 border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-sm rounded-xl transition-colors"
+            className="flex-1 px-4 py-2.5 border-2 border-gray-200 focus:border-primary-700 focus:outline-none text-sm transition-colors"
           />
           <button
             onClick={() => handleSendMessage()}
             disabled={!inputValue.trim()}
             aria-label="Send message"
-            className="w-11 h-11 bg-primary-500 hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-xl flex items-center justify-center transition-colors duration-200 shadow-sm flex-shrink-0"
+            className="w-11 h-11 bg-primary-700 hover:bg-primary-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors duration-200 shadow-sm flex-shrink-0"
           >
             <Send className="w-5 h-5" />
           </button>
         </div>
 
         <div className="mt-3 flex items-center justify-center text-xs text-gray-500">
-          <a href={`mailto:${email}`} className="flex items-center gap-1 hover:text-primary-500">
+          <a href={`mailto:${email}`} className="flex items-center gap-1 hover:text-primary-700">
             <Mail className="w-3 h-3" />
             <span>{email}</span>
           </a>
