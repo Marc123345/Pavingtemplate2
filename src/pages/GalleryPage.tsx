@@ -93,7 +93,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
               <AnimatedSection key={photo.src} delay={(index % 3) * 80}>
                 <button
                   onClick={() => setLightbox(index)}
-                  className="group relative w-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 bg-charcoal-900 text-left"
+                  className="group relative w-full overflow-hidden shadow-theme hover:shadow-theme-lg transition-all duration-500 hover:-translate-y-1 bg-charcoal-900 text-left"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -156,7 +156,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
               <img
                 src={photos[lightbox].src}
                 alt={photos[lightbox].alt}
-                className="w-full max-h-[75vh] object-contain shadow-2xl"
+                className="w-full max-h-[75vh] object-contain shadow-theme-lg"
               />
               <figcaption className="text-center text-charcoal-200 mt-4 text-sm md:text-base">
                 {photos[lightbox].caption}

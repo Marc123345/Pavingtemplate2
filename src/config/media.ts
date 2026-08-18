@@ -1,20 +1,27 @@
 /**
- * Every photograph used on the site, in one place.
+ * Every photograph and video used on the site, in one place.
  *
- * IMPORTANT — why these are stock:
- * The Pavingtemplate repo shipped with the previous client's real job photos
- * and videos (hosted on their ImageKit account). Presenting another
- * contractor's completed work as Bill's would be a misrepresentation, so
- * all of those were removed.
+ * A1's own job photos and videos now carry the site. Bill sent ten photographs
+ * and six clips of real work in August 2026; they live in `public/photos/` and
+ * on A1's ImageKit account respectively.
  *
- * Everything below is free-to-use Pexels stock that has been visually checked
- * to actually depict what the caption says — sealer application, crack
- * sealing, striping, and worn asphalt. None of it is captioned as
- * "our work" anywhere on the site.
+ * WHAT IS STILL STOCK, AND WHY
+ * The photos are all asphalt paving — laying, rolling, and finished driveways.
+ * None of them show sealcoating, crack sealing or line striping, which A1 also
+ * sells. Rather than caption a paving photo as sealcoating, those few slots
+ * keep clearly generic stock and are never described as A1's own work. Replace
+ * them the moment Bill photographs those jobs.
  *
- * SWAP THESE OUT as soon as Bill sends real job photos: replace the `src`
- * values here and the whole site updates. The gallery page also has an
- * explicit `REAL_PROJECT_PHOTOS` list that takes priority when populated.
+ * A NOTE ON RESOLUTION — STILL OUTSTANDING
+ * Every one of these is 640x480, about a third of a megapixel, which is what a
+ * phone photo becomes after a messaging app has compressed it. The ImageKit
+ * copies are the same pixels, so serving them from a CDN improved delivery,
+ * not sharpness. They hold up at card and gallery size, which is where they
+ * are used, and they are deliberately NOT used full-bleed behind the home page
+ * headline — at that size the softness shows, so the hero runs video instead.
+ * Getting the originals off Bill's phone is the single biggest visual upgrade
+ * left: re-upload at full size under the same names and every photo on the
+ * site sharpens with no code change.
  */
 
 const px = (id: number, w: number) =>
@@ -27,6 +34,7 @@ export interface Photo {
   caption: string;
 }
 
+/** Stock, for the trades Bill has not photographed yet. Never captioned as ours. */
 const photo = (id: number, alt: string, caption: string): Photo => ({
   src: px(id, 1600),
   thumb: px(id, 700),
@@ -34,12 +42,102 @@ const photo = (id: number, alt: string, caption: string): Photo => ({
   caption,
 });
 
-/** Sealer going down on a city street — the clearest "this is what we do" shot. */
-export const HERO = photo(
-  34272103,
-  'Distributor truck spraying fresh black asphalt sealer across a street',
-  'Sealer being applied by distributor truck',
+/**
+ * A1's own work, served from A1's ImageKit account alongside the videos.
+ *
+ * `f-auto` is the reason these come from a CDN rather than /public: ImageKit
+ * negotiates AVIF or WebP per browser, which takes a meaningful bite out of a
+ * ten-photo gallery on a phone. The filenames are descriptive because image
+ * search reads them.
+ *
+ * The thumbnail is asked for at 400px because it is only ever painted into a
+ * 4:3 grid cell; the full size is served at its native 640px rather than
+ * upscaled, since asking ImageKit for more pixels than the source holds just
+ * ships a bigger blurry file.
+ */
+const real = (slug: string, alt: string, caption: string): Photo => ({
+  src: `https://ik.imagekit.io/qcvroy8xpd/${slug}.jpg?tr=q-82,f-auto`,
+  thumb: `https://ik.imagekit.io/qcvroy8xpd/${slug}.jpg?tr=w-400,q-78,f-auto`,
+  alt,
+  caption,
+});
+
+/* --------------------------------------------------------------------------
+   A1's own photographs
+   -------------------------------------------------------------------------- */
+
+export const ESTATE_DRIVE = real(
+  'winding-asphalt-driveway-horse-farm-fencing',
+  'Long curved asphalt driveway running between black post-and-rail fencing up to a house',
+  'A finished drive, fence line to front door',
 );
+
+export const ESTATE_ENTRANCE = real(
+  'new-asphalt-driveway-entrance-estate',
+  'Entrance apron of a new asphalt driveway meeting the road, marked with a traffic cone',
+  'Where the new drive meets the road',
+);
+
+export const CURVED_DRIVE = real(
+  'curved-new-asphalt-driveway-across-lawn',
+  'Freshly laid asphalt driveway curving through mown lawns towards a house',
+  'A new drive curving through the lawn',
+);
+
+export const CREW_PAVER = real(
+  'paving-crew-asphalt-paver-machine-jobsite',
+  'A1 crew in high-visibility vests working alongside a paver laying hot asphalt',
+  'Our crew on the paver',
+);
+
+export const RAKING_EDGE = real(
+  'paving-crew-laying-asphalt-residential-driveway',
+  'Crew member raking the edge of fresh hot asphalt behind a paver and dump truck',
+  'Hand-working the edge behind the paver',
+);
+
+export const FEEDING_PAVER = real(
+  'dump-truck-feeding-asphalt-paver-neighborhood',
+  'Red dump truck tipping hot asphalt into a paver on a residential driveway',
+  'Feeding the paver on a residential job',
+);
+
+export const WOODED_COMPACTION = real(
+  'fresh-asphalt-driveway-wooded-property',
+  'Two rollers compacting a new asphalt driveway running through mature woodland',
+  'Rolling a driveway through the trees',
+);
+
+export const WOODED_LANE = real(
+  'asphalt-walking-path-paved-through-woods',
+  'Narrow finished asphalt lane running away through dense green woodland',
+  'A finished woodland lane',
+);
+
+export const SUNRISE_DRIVE = real(
+  'finished-tree-lined-asphalt-driveway-sunset',
+  'Long private asphalt drive beside open farmland with a roller working at sunrise',
+  'Long private drives, start to finish',
+);
+
+export const DUSK_DRIVE = real(
+  'roller-compacting-fresh-asphalt-driveway-sunset',
+  'Roller compacting a new asphalt drive beside open grass at dusk',
+  'Finishing a drive at last light',
+);
+
+/** The hero photograph, used as the poster frame behind the hero video. */
+export const HERO = ESTATE_DRIVE;
+
+/** Kept as aliases so pages referring to these concepts keep working. */
+export const RESIDENTIAL_STREET = FEEDING_PAVER;
+export const CREW_EQUIPMENT = CREW_PAVER;
+export const RURAL_ROAD = SUNRISE_DRIVE;
+export const SEALED_WET = WOODED_COMPACTION;
+
+/* --------------------------------------------------------------------------
+   Stock — trades not yet photographed. Generic on purpose.
+   -------------------------------------------------------------------------- */
 
 export const SEALING = photo(
   34648982,
@@ -51,18 +149,6 @@ export const SEALING_CLOSE = photo(
   13675247,
   'Close view of a sealcoating spray bar applying dark emulsion to asphalt',
   'Even coverage from the spray bar',
-);
-
-export const SEALED_WET = photo(
-  27410934,
-  'Freshly sealed asphalt road with a wet black finish running through evergreen trees',
-  'A finished surface while it cures',
-);
-
-export const RESIDENTIAL_STREET = photo(
-  9843588,
-  'Paving crew laying hot mix asphalt along a residential street',
-  'Working a residential street',
 );
 
 export const CRACK_SEALING = photo(
@@ -89,36 +175,108 @@ export const PARKING_STALLS = photo(
   'Freshly marked parking stalls',
 );
 
-export const CREW_EQUIPMENT = photo(
-  5924617,
-  'Paving crew and chip seal equipment working along a tree-lined road',
-  'Equipment on site',
-);
+/* --------------------------------------------------------------------------
+   Video
+   -------------------------------------------------------------------------- */
 
-export const RURAL_ROAD = photo(
-  17605960,
-  'Paving equipment surfacing a long rural road beside farmland',
-  'Private roads and long lanes',
-);
+export interface Clip {
+  src: string;
+  poster: string;
+  title: string;
+  /** Portrait clips are shot on a phone and must not be letterboxed into 16:9. */
+  portrait?: boolean;
+}
 
-/** Ordered gallery grid. Purely illustrative of the trade — not "our projects". */
+/**
+ * ImageKit is asked for MP4 explicitly. Left to content-negotiate it will hand
+ * some browsers a WebM variant that stalls before delivering any data, which
+ * reads as a broken player. Two of these were uploaded with a `.mov`
+ * extension but are ISO MP4 inside, so they play everywhere as-is.
+ */
+const ik = (file: string, width: number) =>
+  `https://ik.imagekit.io/qcvroy8xpd/${encodeURIComponent(file)}?tr=w-${width},q-70,f-mp4`;
+
+/**
+ * Plays muted and looping behind the home page headline.
+ *
+ * This is the one landscape clip that establishes the whole operation — dump
+ * truck, paver, crew and roller in one frame. Five of the six clips Bill sent
+ * were shot vertically on a phone; a 9:16 video stretched across a 16:9 hero
+ * crops to a meaningless strip of asphalt, so the choice here is dictated by
+ * shape as much as by content.
+ */
+export const HERO_VIDEO = ik('Paving Video 2.mp4', 1280);
+
+/**
+ * Bill's customer, on camera. Shot vertically, so it is shown vertically and
+ * given a column of its own rather than being letterboxed into a widescreen
+ * frame with the speaker's head cropped off.
+ */
+export const TESTIMONIAL_VIDEO: Clip = {
+  src: ik('Testimonial paving.mp4', 1280),
+  poster: ESTATE_DRIVE.src,
+  title: 'A customer on the finished job',
+  portrait: true,
+};
+
+/**
+ * The rest of the clips. `portrait` is not cosmetic — it decides whether the
+ * player frames the clip 9:16 or 16:9, and getting it wrong crops the subject
+ * out of the shot entirely.
+ */
+export const WORK_CLIPS: Clip[] = [
+  {
+    src: ik('Paving 5.mp4', 960),
+    poster: CURVED_DRIVE.thumb,
+    title: 'Rolling the finished surface',
+  },
+  {
+    src: ik('Paving Video.mp4', 960),
+    poster: CREW_PAVER.thumb,
+    title: 'Laying hot mix',
+    portrait: true,
+  },
+  {
+    src: ik('Paving Video 3.mov', 960),
+    poster: WOODED_COMPACTION.thumb,
+    title: 'Rolling it flat',
+    portrait: true,
+  },
+  {
+    src: ik('Paving 4.mov', 960),
+    poster: SUNRISE_DRIVE.thumb,
+    title: 'A drive taking shape',
+    portrait: true,
+  },
+];
+
+/* --------------------------------------------------------------------------
+   Galleries
+   -------------------------------------------------------------------------- */
+
+/** Fallback only — used if REAL_PROJECT_PHOTOS is ever emptied. */
 export const STOCK_GALLERY: Photo[] = [
-  HERO,
+  SEALING,
   CRACK_SEALING,
   STRIPING,
-  SEALED_WET,
   CRACKED_ASPHALT,
-  SEALING,
   PARKING_STALLS,
   SEALING_CLOSE,
-  RESIDENTIAL_STREET,
-  CREW_EQUIPMENT,
-  RURAL_ROAD,
 ];
 
 /**
- * Drop Bill's real before/after photos in here and the gallery switches
- * from illustrative stock to genuine project work automatically.
- * Leave empty until real photos exist.
+ * A1's own completed work. Populated, so the gallery shows "Our recent work"
+ * and the "these are not our jobs" notice switches itself off.
  */
-export const REAL_PROJECT_PHOTOS: Photo[] = [];
+export const REAL_PROJECT_PHOTOS: Photo[] = [
+  ESTATE_DRIVE,
+  CURVED_DRIVE,
+  CREW_PAVER,
+  WOODED_COMPACTION,
+  SUNRISE_DRIVE,
+  RAKING_EDGE,
+  ESTATE_ENTRANCE,
+  FEEDING_PAVER,
+  WOODED_LANE,
+  DUSK_DRIVE,
+];

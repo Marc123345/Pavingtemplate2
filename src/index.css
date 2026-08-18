@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&family=Anton&display=swap');
+/* Dustrix runs entirely on Poppins — headings and body from one family, with
+   weight and tight tracking doing the work that a condensed display face did
+   before. 800 carries the big headings, 300 the light supporting lines. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +15,7 @@
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
@@ -107,17 +110,19 @@
     animation-delay: 400ms;
   }
 
-  /* Sealer amber. Used on dark backgrounds only — the light end of the ramp
-     is too pale to read on white. */
+  /* Brand green through safety yellow. These three run on dark backgrounds
+     only, so the ramps stay in the light half — dropping to primary-500 at the
+     far end would leave the tail of the word unreadable on asphalt. Currently
+     unused by any component; kept because the template ships them. */
   .text-gradient {
-    background: linear-gradient(135deg, #F5A524 0%, #D98B33 55%, #B45309 100%);
+    background: linear-gradient(135deg, #FACC15 0%, #86EFAC 55%, #4ADE80 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-animate {
-    background: linear-gradient(90deg, #B45309, #F5A524, #FBBF24, #B45309);
+    background: linear-gradient(90deg, #4ADE80, #FACC15, #FDE047, #4ADE80);
     background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -126,7 +131,7 @@
   }
 
   .text-gradient-vibrant {
-    background: linear-gradient(135deg, #F5A524 0%, #FBBF24 30%, #FDE68A 50%, #D98B33 75%, #F5A524 100%);
+    background: linear-gradient(135deg, #FACC15 0%, #FDE047 30%, #FEF08A 50%, #86EFAC 75%, #FACC15 100%);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -135,11 +140,11 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 20px rgba(245, 165, 36, 0.5), 0 0 40px rgba(245, 165, 36, 0.3);
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 0 40px rgba(250, 204, 21, 0.3);
   }
 
   .neon-glow {
-    box-shadow: 0 0 20px rgba(245, 165, 36, 0.6), 0 0 40px rgba(245, 165, 36, 0.4), 0 0 60px rgba(245, 165, 36, 0.2);
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.6), 0 0 40px rgba(250, 204, 21, 0.4), 0 0 60px rgba(250, 204, 21, 0.2);
   }
 
   .glass {
@@ -349,5 +354,62 @@
         position: sticky !important;
       }
     }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Dustrix design system
+   ---------------------------------------------------------------------------
+   Forms taken from the Dustrix construction template: generous button padding,
+   a 10px radius, wide soft shadows and a light section wash. The colours stay
+   A1's — deep green primary, asphalt dark, safety-yellow accent — so this is
+   Dustrix's build with A1's brand in it.
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Dustrix: padding 24/36, radius 10, weight 700, 16px, 0.3s ease-in-out. */
+  .theme-btn {
+    @apply inline-flex items-center justify-center gap-3 rounded-theme font-bold text-base
+           px-9 py-5 leading-none transition-all duration-300 ease-in-out
+           bg-primary-500 text-white border-2 border-primary-500;
+  }
+
+  .theme-btn:hover {
+    @apply bg-primary-600 border-primary-600 -translate-y-0.5 shadow-theme-lg;
+  }
+
+  /* The light-on-dark variant, for use over photography and asphalt bands. */
+  .theme-btn-light {
+    @apply bg-white text-charcoal-950 border-white shadow-theme-lg;
+  }
+
+  .theme-btn-light:hover {
+    @apply bg-primary-500 text-white border-primary-500;
+  }
+
+  /* Outline, for the secondary action sitting beside a filled button. */
+  .theme-btn-outline {
+    @apply bg-transparent text-white border-white/70;
+  }
+
+  .theme-btn-outline:hover {
+    @apply bg-white text-charcoal-950 border-white;
+  }
+
+  @media (max-width: 991px) {
+    .theme-btn { @apply px-7 py-4 text-[15px]; }
+  }
+
+  /* Dustrix's card: 10px corners, wide soft shadow, lifting on hover. */
+  .theme-card {
+    @apply rounded-theme bg-white shadow-theme transition-all duration-300;
+  }
+
+  .theme-card:hover {
+    @apply shadow-theme-lg -translate-y-1;
+  }
+
+  /* Dustrix's neutral section wash, used between white bands. */
+  .section-bg {
+    background-color: #f6f6f6;
   }
 }

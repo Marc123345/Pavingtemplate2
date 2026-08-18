@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { BUSINESS_INFO } from '../../config/businessInfo';
+import { BUSINESS_INFO, formattedAddress } from '../../config/businessInfo';
 
 interface NAPInfoProps {
   variant?: 'horizontal' | 'vertical' | 'footer';
@@ -8,9 +8,9 @@ interface NAPInfoProps {
 }
 
 export default function NAPInfo({ variant = 'horizontal', showIcons = true, className = '' }: NAPInfoProps) {
-  const { name, contact, address } = BUSINESS_INFO;
+  const { name, contact } = BUSINESS_INFO;
 
-  const fullAddress = `${address.streetAddress}, ${address.addressLocality}, ${address.addressRegion} ${address.postalCode}`;
+  const fullAddress = formattedAddress();
 
   if (variant === 'footer') {
     return (

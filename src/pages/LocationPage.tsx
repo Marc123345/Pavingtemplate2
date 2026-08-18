@@ -93,14 +93,14 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
           <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <a
               href={`tel:${phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-7 py-4 transition-colors rounded-md min-h-[56px]"
+              className="inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-7 py-4 transition-colors rounded-theme min-h-[56px]"
             >
               <Phone className="w-5 h-5" />
               Call {phone}
             </a>
             <a
               href={`sms:${phoneRaw}?body=Hi%20Bill%2C%20I%27d%20like%20a%20seal%20coating%20estimate%20in%20${encodeURIComponent(city)}.`}
-              className="inline-flex items-center justify-center gap-3 border-2 border-charcoal-600 hover:border-amber-400 hover:text-amber-400 text-white font-bold px-7 py-4 transition-colors rounded-md min-h-[56px]"
+              className="inline-flex items-center justify-center gap-3 border-2 border-charcoal-600 hover:border-amber-400 hover:text-amber-400 text-white font-bold px-7 py-4 transition-colors rounded-theme min-h-[56px]"
             >
               <MessageSquare className="w-5 h-5" />
               Text us
@@ -164,7 +164,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
             </AnimatedSection>
 
             <AnimatedSection delay={120}>
-              <div className="bg-charcoal-950 text-white p-7 md:p-9 shadow-2xl">
+              <div className="bg-charcoal-950 text-white p-7 md:p-9 shadow-theme-lg">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">
                   What we get called out for in {city}
                 </h3>
@@ -186,7 +186,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
                   </p>
                   <a
                     href={`tel:${phoneRaw}`}
-                    className="w-full inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white px-6 py-4 text-lg font-bold transition-colors rounded-md"
+                    className="w-full inline-flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white px-6 py-4 text-lg font-bold transition-colors rounded-theme"
                   >
                     <Phone className="w-5 h-5" />
                     {phone}
@@ -199,7 +199,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
                   src={media.STRIPING.thumb}
                   alt={media.STRIPING.alt}
                   loading="lazy"
-                  className="w-full shadow-lg"
+                  className="w-full shadow-theme"
                 />
                 <p className="mt-2 text-xs text-gray-500">{media.STRIPING.caption}</p>
               </div>
@@ -221,7 +221,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
               <AnimatedSection key={service} delay={i * 40}>
                 <button
                   onClick={() => { onNavigate('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="w-full h-full text-left bg-white p-5 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-lg transition-all duration-300 group"
+                  className="w-full h-full text-left bg-white p-5 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-theme transition-all duration-300 group"
                 >
                   <span className="block font-semibold text-charcoal-950 group-hover:text-primary-500 transition-colors">
                     {service}
@@ -245,7 +245,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
                 <button
                   key={loc.slug}
                   onClick={() => { onNavigate('location', loc.slug); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="group bg-white p-4 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-lg transition-all duration-300 text-left"
+                  className="group bg-white p-4 border-2 border-gray-100 hover:border-primary-300 shadow-sm hover:shadow-theme transition-all duration-300 text-left"
                 >
                   <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-500 transition-colors">
                     {loc.city}

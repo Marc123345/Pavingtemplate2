@@ -1,6 +1,6 @@
 import styles from "./slider.module.css";
 import { ArrowRight, Phone } from "lucide-react";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 type SliderProps = {
   image?: string;
@@ -25,6 +25,21 @@ const Slider = ({
   altText = "Slider image",
   usePhoneIcon = false,
 }: SliderProps) => {
+  /**
+   * Anyone who has asked their system for reduced motion gets the still
+   * instead of a looping clip. Read once at mount rather than during render,
+   * so the value cannot differ between the first paint and the next.
+   */
+  const [reduceMotion, setReduceMotion] = useState(false);
+  useEffect(() => {
+    const q = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(q.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduceMotion(e.matches);
+    q.addEventListener("change", onChange);
+    return () => q.removeEventListener("change", onChange);
+  }, []);
+
+  const showVideo = Boolean(video) && !reduceMotion;
   const cn = (...classes: (string | boolean | undefined)[]) => {
     return classes.filter(Boolean).join(' ');
   };
@@ -39,12 +54,19 @@ const Slider = ({
     >
       <div className={styles.overlay} />
 
-      {video ? (
+      {showVideo ? (
+        /* `poster` matters: without it the hero is a black rectangle for as
+           long as the first frame takes to arrive, which on a phone connection
+           is exactly when the headline is being read. The still shows
+           immediately and the clip fades in over it. */
         <video
           autoPlay
           loop
           muted
           playsInline
+          poster={image}
+          preload="metadata"
+          aria-hidden="true"
           className={styles.video}
         >
           <source src={video} type="video/mp4" />

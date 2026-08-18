@@ -318,3 +318,21 @@ export const SCHEMA_ORG = {
     })),
   },
 };
+
+/**
+ * The address as a single line, built only from the parts that exist.
+ *
+ * A1 is published as a service-area business, so `streetAddress` and
+ * `postalCode` are deliberately empty. Joining every field with commas
+ * regardless produced ", Grand Rapids, MI " — a leading comma and a trailing
+ * space — in the footer and, worse, in the NAP block that local search reads
+ * for name/address/phone consistency. Filtering first means the line stays
+ * correct now and still reads correctly if Bill supplies a street address.
+ */
+export const formattedAddress = (): string => {
+  const { streetAddress, addressLocality, addressRegion, postalCode } = BUSINESS_INFO.address;
+  const cityLine = [addressLocality, [addressRegion, postalCode].filter(Boolean).join(' ')]
+    .filter(Boolean)
+    .join(', ');
+  return [streetAddress, cityLine].filter(Boolean).join(', ');
+};

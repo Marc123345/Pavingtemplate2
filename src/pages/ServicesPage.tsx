@@ -215,7 +215,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 60}>
-                <div className="h-full bg-white p-6 md:p-7 border-2 border-gray-100 hover:border-primary-300 shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="h-full bg-white p-6 md:p-7 border-2 border-gray-100 hover:border-primary-300 shadow-theme hover:shadow-theme-lg transition-all duration-300">
                   <div className="w-14 h-14 bg-primary-500 flex items-center justify-center mb-5">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
@@ -276,7 +276,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
                   src={media.CRACK_SEALING.src}
                   alt={media.CRACK_SEALING.alt}
                   loading="lazy"
-                  className="relative w-full shadow-2xl"
+                  className="relative w-full shadow-theme-lg"
                 />
                 <p className="relative mt-3 text-xs text-gray-500">{media.CRACK_SEALING.caption}</p>
               </div>
@@ -331,7 +331,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
                   <button
                     onClick={() => setExpandedFaq(open ? null : index)}
                     aria-expanded={open}
-                    className="w-full px-5 md:px-8 py-5 md:py-6 text-left flex justify-between items-center gap-4 bg-white hover:bg-primary-50/50 border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 shadow-lg"
+                    className="w-full px-5 md:px-8 py-5 md:py-6 text-left flex justify-between items-center gap-4 bg-white hover:bg-primary-50/50 border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 shadow-theme"
                   >
                     <span className="font-bold text-base md:text-lg text-charcoal-950">
                       {faq.question}

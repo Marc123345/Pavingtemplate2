@@ -165,7 +165,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
               {jotformId ? (
                 <div
                   id="jotform-container"
-                  className="bg-white p-6 md:p-10 shadow-lg border-2 border-gray-100 min-h-[600px]"
+                  className="bg-white p-6 md:p-10 shadow-theme border-2 border-gray-100 min-h-[600px]"
                 />
               ) : (
                 /**
@@ -188,21 +188,21 @@ export default function ContactPage({ onNavigate }: PageProps) {
                   <div className="space-y-3">
                     <a
                       href={`tel:${phoneRaw}`}
-                      className="flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-md min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
                     >
                       <Phone className="w-5 h-5" />
                       Call {phone}
                     </a>
                     <a
                       href={`sms:${phoneRaw}?body=Hi%20Bill%2C%20I%27d%20like%20a%20seal%20coating%20estimate.%20Address%3A%20`}
-                      className="flex items-center justify-center gap-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-md min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-charcoal-950 hover:bg-charcoal-900 text-white font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
                     >
                       <MessageSquare className="w-5 h-5" />
                       Text a photo
                     </a>
                     <a
                       href={`mailto:${email}?subject=Seal%20coating%20estimate%20request&body=Property%20address%3A%20%0A%0AApproximate%20size%20(sq%20ft%20or%20number%20of%20cars)%3A%20%0A%0ADriveway%20or%20parking%20lot%3F%20%0A%0AAny%20visible%20cracking%20or%20potholes%3F%20%0A`}
-                      className="flex items-center justify-center gap-3 bg-white border-2 border-primary-300 hover:border-primary-500 text-primary-600 font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-md min-h-[56px]"
+                      className="flex items-center justify-center gap-3 bg-white border-2 border-primary-300 hover:border-primary-500 text-primary-600 font-bold px-6 py-4 text-base md:text-lg transition-colors rounded-theme min-h-[56px]"
                     >
                       <Mail className="w-5 h-5" />
                       Email the details
@@ -241,7 +241,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
                     onNavigate('location', loc.slug);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="w-full h-full bg-white p-4 shadow-md hover:shadow-xl transition-all duration-300 text-left border border-gray-100 hover:border-primary-300 rounded-lg touch-manipulation group"
+                  className="w-full h-full bg-white p-4 shadow-md hover:shadow-theme-md transition-all duration-300 text-left border border-gray-100 hover:border-primary-300 rounded-theme touch-manipulation group"
                 >
                   <div className="font-semibold text-charcoal-950 text-sm md:text-base group-hover:text-primary-500 transition-colors">
                     {loc.city}, {loc.state}

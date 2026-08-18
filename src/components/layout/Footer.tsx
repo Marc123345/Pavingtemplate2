@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { BUSINESS_INFO } from '../../config/businessInfo';
+import { BUSINESS_INFO, formattedAddress } from '../../config/businessInfo';
 
 type Page = 'home' | 'services' | 'gallery' | 'about' | 'contact' | 'sitemap' | 'location';
 
@@ -9,8 +9,8 @@ interface FooterProps {
 
 export default function Footer({ onNavigate }: FooterProps) {
   const { phone, phoneRaw, email } = BUSINESS_INFO.contact;
-  const { address, serviceArea } = BUSINESS_INFO;
-  const fullAddress = `${address.streetAddress}, ${address.addressLocality}, ${address.addressRegion} ${address.postalCode}`;
+  const { serviceArea } = BUSINESS_INFO;
+  const fullAddress = formattedAddress();
 
   const handleNavigate = (page: Page, citySlug?: string) => {
     onNavigate(page, citySlug);

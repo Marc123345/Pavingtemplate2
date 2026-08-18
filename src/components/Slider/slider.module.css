@@ -99,21 +99,25 @@
     gap: 32px;
 }
 
+/* Dustrix's headline treatment: Poppins at 800 with tracking pulled hard
+   negative. Anton was condensed and needed positive tracking to breathe;
+   Poppins is geometric and wide, so it needs the opposite or it reads soft at
+   this size. */
 .title {
-    font-family: 'Anton', 'Impact', 'Arial Black', sans-serif;
-    font-size: 4.5rem;
-    font-weight: 400;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
     color: white;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
+    line-height: 1.15;
+    letter-spacing: -0.045em;
     margin: 0;
     text-transform: uppercase;
 }
 
 /* Bright safety amber, not the darker brand burnt amber — this sits on the
-   dark hero overlay, where #F5A524 reads at ~9:1 instead of ~3.4:1. */
+   dark hero overlay, where #FACC15 reads at ~9:1 instead of ~3.4:1. */
 .title span {
-    color: #F5A524;
+    color: #FACC15;
 }
 
 .subtitle {
@@ -127,24 +131,26 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: #B45309;
+    background: #15803D;
     color: white;
     font-weight: 700;
-    padding: 1rem 2.5rem;
-    font-size: 1.125rem;
+    /* Dustrix button proportions: 24px/36px padding on a 10px radius. */
+    padding: 1.5rem 2.25rem;
+    border-radius: 10px;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     animation: buttonPulse 2s ease-in-out infinite, buttonBounce 3s ease-in-out infinite;
-    box-shadow: 0 0 20px rgba(180, 83, 9, 0.45), 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(21, 128, 61, 0.45), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .button::before {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(45deg, #B45309, #F5A524, #B45309);
+    background: linear-gradient(45deg, #15803D, #FACC15, #15803D);
     background-size: 200% 200%;
     animation: gradientShift 3s ease infinite;
     opacity: 0;
@@ -157,9 +163,9 @@
 }
 
 .button:hover {
-    background: #96430A;
+    background: #166534;
     transform: scale(1.08) translateY(-2px);
-    box-shadow: 0 0 40px rgba(245, 165, 36, 0.55), 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.55), 0 20px 40px rgba(0, 0, 0, 0.4);
     animation: none;
 }
 
@@ -191,10 +197,10 @@
 
 @keyframes buttonPulse {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(180, 83, 9, 0.45), 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 20px rgba(21, 128, 61, 0.45), 0 10px 30px rgba(0, 0, 0, 0.3);
     }
     50% {
-        box-shadow: 0 0 35px rgba(245, 165, 36, 0.55), 0 10px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 35px rgba(250, 204, 21, 0.55), 0 10px 40px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -270,6 +276,7 @@
 
     .title {
         font-size: 3rem;
+        letter-spacing: -0.04em;
         line-height: 1.1;
         letter-spacing: -0.02em;
     }

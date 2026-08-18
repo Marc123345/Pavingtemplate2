@@ -18,7 +18,7 @@
   <g clip-path="url(#psc-badge-s)">
     <path d="M93 53 L105.5 15 H114.5 L127 53 Z" fill="url(#psc-strip-s)"/>
     <path d="M93 53 L105.5 15 H109 L102 53 Z" fill="#FFFFFF" opacity=".07"/>
-    <g fill="#F5A524">
+    <g fill="#FACC15">
       <rect x="107.6" y="46.5" width="4.8" height="5" rx=".7"/>
       <rect x="108" y="37.5" width="4" height="4.1" rx=".6"/>
       <rect x="108.4" y="29.8" width="3.2" height="3.3" rx=".5"/>
@@ -26,7 +26,7 @@
       <rect x="108.95" y="18.2" width="2.1" height="2" rx=".35"/>
     </g>
   </g>
-  <rect x="80.25" y="2.25" width="59.5" height="59.5" rx="13.5" fill="none" stroke="#F5A524" stroke-width="3.5"/>
+  <rect x="80.25" y="2.25" width="59.5" height="59.5" rx="13.5" fill="none" stroke="#FACC15" stroke-width="3.5"/>
 
   <text x="110" y="97" text-anchor="middle" font-family="Anton, 'Arial Narrow', Impact, sans-serif" font-size="31" fill="#16161A" letter-spacing="0.5">A1 PAVING</text>
   <text x="110" y="118" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#A85F08" letter-spacing="3">ASPHALT PAVING</text>

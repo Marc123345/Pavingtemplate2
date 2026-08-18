@@ -82,8 +82,8 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="hubGlow" cx="57%" cy="47%">
-                <stop offset="0%" stopColor="#F5A524" stopOpacity="0.18" />
-                <stop offset="100%" stopColor="#F5A524" stopOpacity="0" />
+                <stop offset="0%" stopColor="#FACC15" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#FACC15" stopOpacity="0" />
               </radialGradient>
             </defs>
 
@@ -100,7 +100,7 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                     y1={HUB.y}
                     x2={pos.x}
                     y2={pos.y}
-                    stroke={active ? '#F5A524' : '#3A3A41'}
+                    stroke={active ? '#FACC15' : '#3A3A41'}
                     strokeWidth={active ? 0.5 : 0.2}
                     strokeDasharray="2,2"
                     initial={{ pathLength: 0 }}
@@ -119,8 +119,8 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
                     onClick={() => setSelected(selected === loc.slug ? null : loc.slug)}
                     style={{ cursor: 'pointer' }}
                   >
-                    <circle cx={pos.x} cy={pos.y} r={active ? 2.5 : 1.8} fill={active ? '#F5A524' : '#B45309'} className="transition-all duration-300" />
-                    <circle cx={pos.x} cy={pos.y} r={active ? 4 : 3} fill="none" stroke={active ? '#F5A524' : '#79360B'} strokeWidth="0.3" opacity={active ? 0.7 : 0.4} className="transition-all duration-300" />
+                    <circle cx={pos.x} cy={pos.y} r={active ? 2.5 : 1.8} fill={active ? '#FACC15' : '#15803D'} className="transition-all duration-300" />
+                    <circle cx={pos.x} cy={pos.y} r={active ? 4 : 3} fill="none" stroke={active ? '#FACC15' : '#14532D'} strokeWidth="0.3" opacity={active ? 0.7 : 0.4} className="transition-all duration-300" />
                     {active && (
                       <text x={pos.x} y={pos.y - 4.5} textAnchor="middle" fontSize="3" fontWeight="bold" fill="#FFFFFF" className="pointer-events-none">
                         {loc.city}
@@ -132,9 +132,9 @@ export default function InteractiveServiceMap({ onNavigate }: InteractiveService
             })}
 
             {/* home base */}
-            <motion.circle cx={HUB.x} cy={HUB.y} r="3" fill="#F5A524" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} />
-            <motion.circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#F5A524" strokeWidth="0.5" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
-            <text x={HUB.x} y={HUB.y + 9} textAnchor="middle" fontSize="2.8" fontWeight="bold" fill="#F5A524">
+            <motion.circle cx={HUB.x} cy={HUB.y} r="3" fill="#FACC15" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} />
+            <motion.circle cx={HUB.x} cy={HUB.y} r="5.5" fill="none" stroke="#FACC15" strokeWidth="0.5" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 0.5 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} />
+            <text x={HUB.x} y={HUB.y + 9} textAnchor="middle" fontSize="2.8" fontWeight="bold" fill="#FACC15">
               Grand Rapids
             </text>
             <text x={HUB.x} y={HUB.y + 12.5} textAnchor="middle" fontSize="2.2" fill="#88888F">

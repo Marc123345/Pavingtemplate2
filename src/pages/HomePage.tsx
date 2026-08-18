@@ -12,6 +12,7 @@ import BeforeAfterGallery from '../components/BeforeAfterGallery';
 import InteractiveServiceMap from '../components/InteractiveServiceMap';
 import SectionDivider from '../components/SectionDivider';
 import CallToAction from '../components/CallToAction';
+import VideoPlayer from '../components/VideoPlayer';
 import { BUSINESS_INFO } from '../config/businessInfo';
 import * as media from '../config/media';
 import { PageProps } from '../types';
@@ -45,6 +46,7 @@ export default function HomePage({ onNavigate }: PageProps) {
 
       <Slider
         image={media.HERO.src}
+        video={media.HERO_VIDEO}
         title={<>Anything That Involves <span>Asphalt.</span></>}
         subtitle="Asphalt paving, tar and chip, resurfacing and sealcoating across Grand Rapids and West Michigan. Residential, commercial and industrial. Free written estimates, and a real person on the phone."
         buttonText={`Call ${phone}`}
@@ -173,7 +175,7 @@ export default function HomePage({ onNavigate }: PageProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-charcoal-950 shadow-2xl p-6 md:p-8 mx-4"
+              className="bg-charcoal-950 shadow-theme-lg p-6 md:p-8 mx-4"
             >
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 md:gap-6 text-white">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-primary-500 flex items-center justify-center flex-shrink-0">
@@ -194,7 +196,7 @@ export default function HomePage({ onNavigate }: PageProps) {
                 </div>
                 <a
                   href={`tel:${phoneRaw}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 rounded-md transition-colors whitespace-nowrap"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-4 rounded-theme transition-colors whitespace-nowrap"
                 >
                   <Phone className="w-5 h-5" />
                   Get a Number
@@ -241,7 +243,7 @@ export default function HomePage({ onNavigate }: PageProps) {
               <AnimatedSection key={card.title} delay={i * 100}>
                 <button
                   onClick={() => { onNavigate('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="group text-left w-full h-full bg-white border-2 border-gray-100 hover:border-primary-300 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                  className="group text-left w-full h-full bg-white border-2 border-gray-100 hover:border-primary-300 shadow-theme hover:shadow-theme-lg transition-all duration-300 overflow-hidden"
                 >
                   <div className="relative h-52 overflow-hidden bg-charcoal-900">
                     <img
@@ -302,7 +304,7 @@ export default function HomePage({ onNavigate }: PageProps) {
                 src={media.SEALING.src}
                 alt={media.SEALING.alt}
                 loading="lazy"
-                className="relative w-full shadow-2xl"
+                className="relative w-full shadow-theme-lg"
               />
               <p className="relative mt-3 text-xs text-charcoal-400">{media.SEALING.caption}</p>
             </div>
@@ -336,7 +338,56 @@ export default function HomePage({ onNavigate }: PageProps) {
             </div>
           </div>
         </div>
-        <SectionDivider variant="split" position="bottom" fillColor="#FDF6EC" />
+        <SectionDivider variant="split" position="bottom" fillColor="#F0FDF4" />
+      </section>
+
+      {/* ── In his customer's words ────────────────────────────────────── */}
+      <section className="relative py-16 md:py-28 bg-charcoal-950 overflow-hidden">
+        <div className="absolute top-20 right-10 w-64 h-64 bg-primary-500/10 blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection>
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bebas font-bold text-white mb-4 tracking-wide">
+                DON'T TAKE <span className="text-amber-400">OUR WORD FOR IT</span>
+              </h2>
+              <p className="text-base md:text-lg text-charcoal-200 max-w-2xl mx-auto leading-relaxed">
+                A customer talking about their finished driveway, on camera and unedited.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={100}>
+            <div className="max-w-3xl mx-auto">
+              <VideoPlayer clip={media.TESTIMONIAL_VIDEO} className="shadow-theme-lg" />
+            </div>
+          </AnimatedSection>
+        </div>
+        <SectionDivider variant="triangle" position="bottom" fillColor="white" />
+      </section>
+
+      {/* ── The work, moving ───────────────────────────────────────────── */}
+      <section className="relative py-16 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
+                ON THE <span className="text-primary-500">JOB</span>
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                Clips from our own jobs across West Michigan. Tap any one to play it.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {media.WORK_CLIPS.map((clip, i) => (
+              <AnimatedSection key={clip.src} delay={(i % 3) * 80}>
+                <VideoPlayer clip={clip} className="shadow-theme" />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+        <SectionDivider variant="wave" position="bottom" fillColor="#F0FDF4" />
       </section>
 
       {/* ── Service area map ───────────────────────────────────────────── */}

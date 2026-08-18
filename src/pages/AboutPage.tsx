@@ -98,7 +98,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
               className="relative group"
             >
               <div className="absolute -inset-4 bg-primary-500/20 transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative overflow-hidden shadow-2xl">
+              <div className="relative overflow-hidden shadow-theme-lg">
                 <img
                   src={media.RESIDENTIAL_STREET.src}
                   alt={media.RESIDENTIAL_STREET.alt}
@@ -135,7 +135,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
                   Valley and most of Kent County within a short drive. You call the
                   number and you get Bill, not a call centre.
                 </p>
-                <div className="bg-charcoal-950 text-white p-5 md:p-6 shadow-xl">
+                <div className="bg-charcoal-950 text-white p-5 md:p-6 shadow-theme-md">
                   <p className="text-base md:text-lg font-semibold">
                     If sealing is not the right call for your surface, we will say so. Coating
                     over a failing driveway is a way to take someone&rsquo;s money twice.
@@ -182,7 +182,7 @@ export default function AboutPage({ onNavigate }: PageProps) {
                 },
               ].map((item, i) => (
                 <AnimatedSection key={item.title} delay={i * 100}>
-                  <div className="h-full bg-white p-6 md:p-8 border-2 border-gray-100 shadow-lg">
+                  <div className="h-full bg-white p-6 md:p-8 border-2 border-gray-100 shadow-theme">
                     <div className="w-14 h-14 bg-primary-500 flex items-center justify-center mb-5">
                       <item.icon className="w-7 h-7 text-white" />
                     </div>
