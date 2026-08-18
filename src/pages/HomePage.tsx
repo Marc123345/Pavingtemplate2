@@ -357,7 +357,7 @@ export default function HomePage({ onNavigate }: PageProps) {
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-sm mx-auto">
               <VideoPlayer clip={media.TESTIMONIAL_VIDEO} className="shadow-theme-lg" />
             </div>
           </AnimatedSection>
@@ -379,9 +379,9 @@ export default function HomePage({ onNavigate }: PageProps) {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 items-start">
             {media.WORK_CLIPS.map((clip, i) => (
-              <AnimatedSection key={clip.src} delay={(i % 3) * 80}>
+              <AnimatedSection key={clip.src} delay={(i % 4) * 80}>
                 <VideoPlayer clip={clip} className="shadow-theme" />
               </AnimatedSection>
             ))}

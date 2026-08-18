@@ -5,7 +5,11 @@ import type { Clip } from '../config/media';
 interface Props {
   clip: Clip;
   className?: string;
-  /** 'video' fills a 16:9 frame; 'portrait' fills a 9:16 one. */
+  /**
+   * Overrides the shape. Normally leave this alone: the frame follows the
+   * clip's own `portrait` flag, so a vertical clip cannot be dropped into a
+   * widescreen frame by forgetting to pass anything.
+   */
   shape?: 'video' | 'portrait';
 }
 
@@ -19,7 +23,7 @@ interface Props {
  * clicked: `preload="none"` means the poster image is the entire cost of a
  * clip nobody plays.
  */
-export default function VideoPlayer({ clip, className = '', shape = 'video' }: Props) {
+export default function VideoPlayer({ clip, className = '', shape }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
 
@@ -30,7 +34,9 @@ export default function VideoPlayer({ clip, className = '', shape = 'video' }: P
     void ref.current?.play();
   };
 
-  const aspect = shape === 'portrait' ? 'aspect-[9/16]' : 'aspect-video';
+  // The clip's own orientation decides the frame unless explicitly overridden.
+  const resolved = shape ?? (clip.portrait ? 'portrait' : 'video');
+  const aspect = resolved === 'portrait' ? 'aspect-[9/16]' : 'aspect-video';
 
   return (
     <div className={`relative overflow-hidden bg-charcoal-950 ${aspect} ${className}`}>
