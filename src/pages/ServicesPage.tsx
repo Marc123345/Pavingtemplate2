@@ -176,7 +176,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${media.SEALING_CLOSE.src})`,
+            backgroundImage: `url(${media.WOODED_COMPACTION.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -268,12 +268,12 @@ export default function ServicesPage({ onNavigate }: PageProps) {
               <div className="relative">
                 <div className="absolute -inset-3 bg-primary-200 transform -rotate-2" />
                 <img
-                  src={media.CRACK_SEALING.src}
-                  alt={media.CRACK_SEALING.alt}
+                  src={media.RAKING_EDGE.src}
+                  alt={media.RAKING_EDGE.alt}
                   loading="lazy"
                   className="relative w-full shadow-theme-lg"
                 />
-                <p className="relative mt-3 text-xs text-gray-500">{media.CRACK_SEALING.caption}</p>
+                <p className="relative mt-3 text-xs text-gray-500">{media.RAKING_EDGE.caption}</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={120}>

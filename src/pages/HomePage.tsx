@@ -8,7 +8,6 @@ import Slider from '../components/Slider';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import BenefitCard from '../components/BenefitCard';
-import BeforeAfterGallery from '../components/BeforeAfterGallery';
 import InteractiveServiceMap from '../components/InteractiveServiceMap';
 import CallToAction from '../components/CallToAction';
 import VideoPlayer from '../components/VideoPlayer';
@@ -99,26 +98,6 @@ export default function HomePage({ onNavigate }: PageProps) {
               </div>
             </motion.div>
 
-            {/* Illustrative comparison — stock, and captioned as such. */}
-            <BeforeAfterGallery
-              comparisons={[
-                {
-                  before: { src: media.CRACKED_ASPHALT.src, alt: media.CRACKED_ASPHALT.alt },
-                  after: { src: media.SEALING.src, alt: media.SEALING.alt },
-                  beforeLabel: 'UNSEALED',
-                  afterLabel: 'SEALED',
-                  caption: 'Grey, cracking asphalt versus a freshly sealed surface.',
-                },
-                {
-                  before: { src: media.STRIPING.src, alt: media.STRIPING.alt },
-                  after: { src: media.PARKING_STALLS.src, alt: media.PARKING_STALLS.alt },
-                  beforeLabel: 'WORN LINES',
-                  afterLabel: 'RE-STRIPED',
-                  caption: 'Faded stall markings versus a crisp re-stripe.',
-                },
-              ]}
-              disclaimer="Illustrative examples of the work, not photos of completed A1 Paving projects."
-            />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -228,13 +207,13 @@ export default function HomePage({ onNavigate }: PageProps) {
                 copy: 'Single driveways, long rural lanes, and everything between. Cracks filled, edges cleaned up, then an even coat.',
               },
               {
-                photo: media.STRIPING,
+                photo: media.CREW_PAVER,
                 title: 'Commercial Lots',
                 copy: 'Retail, office, multifamily and industrial lots. Full paving, resurfacing, and stall lines, arrows and ADA markings.',
               },
               {
-                photo: media.CRACK_SEALING,
-                title: 'Crack Filling & Repair',
+                photo: media.RAKING_EDGE,
+                title: 'Ground Prep & Base',
                 copy: 'Ground prep and a compacted stone base. This is the part that decides whether the finished surface actually holds.',
               },
             ].map((card, i) => (
@@ -298,12 +277,12 @@ export default function HomePage({ onNavigate }: PageProps) {
             <div className="relative">
               <div className="absolute -inset-3 bg-primary-500/20 transform rotate-2" />
               <img
-                src={media.SEALING.src}
-                alt={media.SEALING.alt}
+                src={media.ESTATE_ENTRANCE.src}
+                alt={media.ESTATE_ENTRANCE.alt}
                 loading="lazy"
                 className="relative w-full shadow-theme-lg"
               />
-              <p className="relative mt-3 text-xs text-charcoal-400">{media.SEALING.caption}</p>
+              <p className="relative mt-3 text-xs text-charcoal-400">{media.ESTATE_ENTRANCE.caption}</p>
             </div>
 
             <div>

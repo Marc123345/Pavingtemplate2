@@ -12,7 +12,9 @@ export default function GalleryPage({ onNavigate }: PageProps) {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const hasRealPhotos = media.REAL_PROJECT_PHOTOS.length > 0;
-  const photos = hasRealPhotos ? media.REAL_PROJECT_PHOTOS : media.STOCK_GALLERY;
+  /* Only A1's own photographs remain, so there is no stock fallback to choose
+     between any more — the gallery is simply his work. */
+  const photos: media.Photo[] = media.REAL_PROJECT_PHOTOS;
 
   return (
     <div className="bg-white">

@@ -58,11 +58,15 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="text-white font-bold text-base md:text-lg mb-4 md:mb-6">Services</h4>
             <ul className="space-y-1">
+              {/* Plain text, not links. All six used to be buttons firing the
+                  same navigate('services') call, so whichever one you clicked
+                  dropped you at the top of the same page — six controls that
+                  looked like navigation and behaved identically. The list still
+                  tells you what A1 does; it just no longer pretends to go
+                  somewhere. */}
               {BUSINESS_INFO.services.slice(0, 6).map((service) => (
-                <li key={service}>
-                  <button onClick={() => handleNavigate('services')} className={linkClass}>
-                    {service}
-                  </button>
+                <li key={service} className="text-sm md:text-base text-charcoal-300 py-1">
+                  {service}
                 </li>
               ))}
             </ul>

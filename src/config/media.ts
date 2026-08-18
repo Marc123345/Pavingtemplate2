@@ -1,16 +1,11 @@
 /**
  * Every photograph and video used on the site, in one place.
  *
- * A1's own job photos and videos now carry the site. Bill sent ten photographs
- * and six clips of real work in August 2026; they live in `public/photos/` and
- * on A1's ImageKit account respectively.
- *
- * WHAT IS STILL STOCK, AND WHY
- * The photos are all asphalt paving — laying, rolling, and finished driveways.
- * None of them show sealcoating, crack sealing or line striping, which A1 also
- * sells. Rather than caption a paving photo as sealcoating, those few slots
- * keep clearly generic stock and are never described as A1's own work. Replace
- * them the moment Bill photographs those jobs.
+ * A1's own work carries the site entirely — ten photographs and six clips Bill
+ * sent in August 2026, all served from A1's ImageKit account. There is no
+ * stock photography left anywhere: if a slot needed a picture of a trade A1
+ * has not photographed, the slot now shows real paving work and says so,
+ * rather than borrowing a stranger's photo of sealcoating.
  *
  * A NOTE ON RESOLUTION — STILL OUTSTANDING
  * Every one of these is 640x480, about a third of a megapixel, which is what a
@@ -24,23 +19,12 @@
  * site sharpens with no code change.
  */
 
-const px = (id: number, w: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
-
 export interface Photo {
   src: string;
   thumb: string;
   alt: string;
   caption: string;
 }
-
-/** Stock, for the trades Bill has not photographed yet. Never captioned as ours. */
-const photo = (id: number, alt: string, caption: string): Photo => ({
-  src: px(id, 1600),
-  thumb: px(id, 700),
-  alt,
-  caption,
-});
 
 /**
  * A1's own work, served from A1's ImageKit account alongside the videos.
@@ -141,46 +125,6 @@ export const CREW_EQUIPMENT = CREW_PAVER;
 export const RURAL_ROAD = SUNRISE_DRIVE;
 
 /* --------------------------------------------------------------------------
-   Stock — trades not yet photographed. Generic on purpose.
-   -------------------------------------------------------------------------- */
-
-export const SEALING = photo(
-  34648982,
-  'Asphalt distributor truck laying a fresh coat of sealer along a rural road',
-  'Fresh sealer, edge to edge',
-);
-
-export const SEALING_CLOSE = photo(
-  13675247,
-  'Close view of a sealcoating spray bar applying dark emulsion to asphalt',
-  'Even coverage from the spray bar',
-);
-
-export const CRACK_SEALING = photo(
-  9963246,
-  'Hot rubber crack sealant filling a branching crack in grey asphalt',
-  'Hot rubber crack sealing',
-);
-
-export const CRACKED_ASPHALT = photo(
-  29213468,
-  'Close-up of dry, grey, badly cracked asphalt breaking apart',
-  'Unsealed asphalt, opening up',
-);
-
-export const STRIPING = photo(
-  12142222,
-  'Bright yellow line striping crossing a grey asphalt parking area',
-  'Line striping and stall marking',
-);
-
-export const PARKING_STALLS = photo(
-  33966251,
-  'Crisp white parking stall lines on dark asphalt',
-  'Freshly marked parking stalls',
-);
-
-/* --------------------------------------------------------------------------
    Video
    -------------------------------------------------------------------------- */
 
@@ -256,22 +200,13 @@ export const WORK_CLIPS: Clip[] = [
 ];
 
 /* --------------------------------------------------------------------------
-   Galleries
+   Gallery
    -------------------------------------------------------------------------- */
 
-/** Fallback only — used if REAL_PROJECT_PHOTOS is ever emptied. */
-export const STOCK_GALLERY: Photo[] = [
-  SEALING,
-  CRACK_SEALING,
-  STRIPING,
-  CRACKED_ASPHALT,
-  PARKING_STALLS,
-  SEALING_CLOSE,
-];
-
 /**
- * A1's own completed work. Populated, so the gallery shows "Our recent work"
- * and the "these are not our jobs" notice switches itself off.
+ * A1's own completed work, in the order it reads best: the two strongest
+ * finished drives first, then the crew at work, then the rest. The gallery
+ * shows "Our recent work" because this is populated.
  */
 export const REAL_PROJECT_PHOTOS: Photo[] = [
   ESTATE_DRIVE,

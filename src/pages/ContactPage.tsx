@@ -47,7 +47,7 @@ export default function ContactPage({ onNavigate }: PageProps) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${media.SEALING.src})`,
+            backgroundImage: `url(${media.SUNRISE_DRIVE.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

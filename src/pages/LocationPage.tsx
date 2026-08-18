@@ -196,12 +196,12 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
 
               <div className="mt-6">
                 <img
-                  src={media.STRIPING.thumb}
-                  alt={media.STRIPING.alt}
+                  src={media.CURVED_DRIVE.thumb}
+                  alt={media.CURVED_DRIVE.alt}
                   loading="lazy"
                   className="w-full shadow-theme"
                 />
-                <p className="mt-2 text-xs text-gray-500">{media.STRIPING.caption}</p>
+                <p className="mt-2 text-xs text-gray-500">{media.CURVED_DRIVE.caption}</p>
               </div>
             </AnimatedSection>
           </div>

@@ -39,8 +39,8 @@ const values: Value[] = [
     title: 'The Prep Gets Real Time',
     description:
       'Asphalt only lasts on a properly prepared base. Most of the work on a good job happens before any hot mix reaches the site.',
-    image: media.CRACK_SEALING.src,
-    imageAlt: media.CRACK_SEALING.alt,
+    image: media.RAKING_EDGE.src,
+    imageAlt: media.RAKING_EDGE.alt,
     motto: 'The surface is the easy part',
     details: [
       'Surface cleaned of debris and loose material',
@@ -55,8 +55,8 @@ const values: Value[] = [
     title: 'You Get a Straight Answer',
     description:
       'Including when the answer is that you should not spend money on this yet, or that sealing will not fix what you actually have.',
-    image: media.CRACKED_ASPHALT.src,
-    imageAlt: media.CRACKED_ASPHALT.alt,
+    image: media.WOODED_LANE.src,
+    imageAlt: media.WOODED_LANE.alt,
     motto: 'We will tell you not to buy it',
     details: [
       'If the surface needs resurfacing, we say so instead of coating it',
@@ -71,8 +71,8 @@ const values: Value[] = [
     title: 'Timed Around the Weather',
     description:
       'Sealer needs dry pavement and warm enough surface temperatures to cure. We would rather move your date than coat in the wrong conditions.',
-    image: media.SEALING.src,
-    imageAlt: media.SEALING.alt,
+    image: media.DUSK_DRIVE.src,
+    imageAlt: media.DUSK_DRIVE.alt,
     motto: 'Rather reschedule than ruin it',
     details: [
       'Forecast checked before the crew rolls out',
