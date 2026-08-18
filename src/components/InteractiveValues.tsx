@@ -23,8 +23,8 @@ const values: Value[] = [
     title: 'Priced Off a Real Measurement',
     description:
       'Nobody quotes a driveway accurately from the kerb. We measure the surface and look at its condition before giving you a number.',
-    image: media.SEALED_WET.src,
-    imageAlt: media.SEALED_WET.alt,
+    image: media.ESTATE_DRIVE.src,
+    imageAlt: media.ESTATE_DRIVE.alt,
     motto: 'Measured, then written down',
     details: [
       'Square footage measured on site, not estimated from a photo',

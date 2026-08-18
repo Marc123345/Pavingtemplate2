@@ -129,11 +129,16 @@ export const DUSK_DRIVE = real(
 /** The hero photograph, used as the poster frame behind the hero video. */
 export const HERO = ESTATE_DRIVE;
 
-/** Kept as aliases so pages referring to these concepts keep working. */
+/**
+ * Aliases, so pages referring to these concepts keep working. Each one points
+ * at a real photograph that genuinely depicts the concept named — there is
+ * deliberately no alias for a sealed surface, because none of A1's photographs
+ * show sealcoating and naming one SEALED_WET would make the name lie about
+ * the picture.
+ */
 export const RESIDENTIAL_STREET = FEEDING_PAVER;
 export const CREW_EQUIPMENT = CREW_PAVER;
 export const RURAL_ROAD = SUNRISE_DRIVE;
-export const SEALED_WET = WOODED_COMPACTION;
 
 /* --------------------------------------------------------------------------
    Stock — trades not yet photographed. Generic on purpose.

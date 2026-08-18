@@ -37,7 +37,7 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
         <div
           className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: `url(${media.SEALED_WET.src})`,
+            backgroundImage: `url(${media.WOODED_COMPACTION.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -57,7 +57,7 @@ export default function SitemapPage({ onNavigate }: SitemapPageProps) {
         </div>
       </section>
 
-      <section className="py-14 md:py-20 bg-charcoal-900">
+      <section className="section-padding bg-charcoal-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 border-b border-amber-500/20 pb-4">

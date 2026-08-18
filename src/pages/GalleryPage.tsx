@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
-import SectionDivider from '../components/SectionDivider';
 import CallToAction from '../components/CallToAction';
 import * as media from '../config/media';
 import { PageProps } from '../types';
@@ -29,7 +28,7 @@ export default function GalleryPage({ onNavigate }: PageProps) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${media.SEALED_WET.src})`,
+            backgroundImage: `url(${media.WOODED_COMPACTION.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -45,14 +44,9 @@ export default function GalleryPage({ onNavigate }: PageProps) {
           </p>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none" style={{ marginBottom: '-1px' }}>
-          <svg className="relative block w-full h-[80px] md:h-[120px]" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="white" style={{ display: 'block' }}>
-            <path d="M0,0 L720,100 L1440,0 L1440,120 L0,120 Z"></path>
-          </svg>
-        </div>
       </section>
 
-      <section className="relative py-14 md:py-24 bg-white">
+      <section className="relative section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {!hasRealPhotos && (
             /**
@@ -121,7 +115,6 @@ export default function GalleryPage({ onNavigate }: PageProps) {
             </p>
           )}
         </div>
-        <SectionDivider variant="tilt" position="bottom" fillColor="#16161A" />
       </section>
 
       <CallToAction

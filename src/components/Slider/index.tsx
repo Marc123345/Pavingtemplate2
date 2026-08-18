@@ -105,11 +105,6 @@ const Slider = ({
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10" style={{ marginBottom: '-1px' }}>
-        <svg className="relative block w-full h-[80px] md:h-[120px]" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="white" style={{ display: 'block' }}>
-          <path d="M0,0 L720,100 L1440,0 L1440,120 L0,120 Z"></path>
-        </svg>
-      </div>
     </div>
   );
 };

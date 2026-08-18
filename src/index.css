@@ -413,3 +413,48 @@
     background-color: #f6f6f6;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Dustrix sections and cards
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Dustrix's vertical rhythm: 120px, stepping to 100 then 80. Every band on
+     the site uses this instead of ad-hoc py- values, which is what made the
+     old spacing feel uneven from section to section. */
+  .section-padding {
+    @apply py-20 md:py-[100px] lg:py-[120px];
+  }
+
+  /* The eyebrow-over-heading pair Dustrix opens every section with. */
+  .section-title p,
+  .section-eyebrow {
+    @apply text-primary-500 font-semibold capitalize mb-2 tracking-wide;
+  }
+
+  /**
+   * Dustrix's service card: deep even padding, 10px corners, a large circular
+   * icon, and a hover that lifts the whole card on the soft shadow. The
+   * template A1 came from used square corners, a square icon tile and a hard
+   * shadow — this is the single biggest change to how a page reads.
+   */
+  .service-card {
+    @apply relative z-[1] overflow-hidden rounded-theme bg-white text-center
+           px-8 py-12 lg:px-9 lg:py-14 shadow-theme
+           transition-all duration-300 ease-in-out;
+  }
+
+  .service-card:hover {
+    @apply shadow-theme-lg -translate-y-2;
+  }
+
+  /* 120px circle in Dustrix; 96px here, because A1's cards sit three-up in a
+     narrower container and the full size crowds the copy. */
+  .service-card__icon {
+    @apply w-24 h-24 mx-auto mb-7 rounded-full flex items-center justify-center
+           bg-primary-500 text-white transition-all duration-300 ease-in-out;
+  }
+
+  .service-card:hover .service-card__icon {
+    @apply bg-charcoal-950 scale-105;
+  }
+}

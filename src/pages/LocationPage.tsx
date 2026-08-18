@@ -117,7 +117,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
       />
 
       {/* Local detail */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <AnimatedSection>
@@ -209,7 +209,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
       </section>
 
       {/* Services quick list */}
-      <section className="py-16 md:py-24 bg-charcoal-50">
+      <section className="section-padding bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-14">
             <h2 className="text-3xl md:text-4xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
@@ -235,7 +235,7 @@ export default function LocationPage({ slug, onNavigate }: LocationPageProps) {
 
       {/* Nearby */}
       {nearby.length > 0 && (
-        <section className="py-16 md:py-24 bg-white">
+        <section className="section-padding bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-bebas font-bold text-charcoal-950 mb-8 tracking-wide text-center">
               ALSO SERVING NEARBY IN <span className="text-primary-500">{stateName.toUpperCase()}</span>

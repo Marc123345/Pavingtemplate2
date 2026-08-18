@@ -24,8 +24,8 @@ export default function BenefitCard({ icon: Icon, title, description, index }: B
       role="article"
       aria-label={`Benefit: ${title}`}
     >
-      <div className="relative bg-white p-8 shadow-theme hover:shadow-theme-lg transition-all duration-500 border border-gray-200 hover:border-primary-500 overflow-hidden h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="service-card h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-[1]" />
 
         <div className="relative z-10">
           <motion.div
@@ -34,12 +34,12 @@ export default function BenefitCard({ icon: Icon, title, description, index }: B
               rotate: isHovered ? 5 : 0,
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center mb-6 shadow-theme group-hover:shadow-theme-md transition-shadow duration-300"
+            className="service-card__icon"
           >
-            <Icon className="w-8 h-8 text-white" />
+            <Icon className="w-10 h-10" />
           </motion.div>
 
-          <h3 className="text-xl font-bebas font-bold text-charcoal-950 mb-3 tracking-wide group-hover:text-primary-600 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-charcoal-950 mb-3 group-hover:text-primary-600 transition-colors duration-300">
             {title}
           </h3>
 

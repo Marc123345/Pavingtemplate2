@@ -192,15 +192,10 @@ export default function ServicesPage({ onNavigate }: PageProps) {
           </p>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none" style={{ marginBottom: '-1px' }}>
-          <svg className="relative block w-full h-[80px] md:h-[120px]" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="white" style={{ display: 'block' }}>
-            <path d="M0,0 L720,100 L1440,0 L1440,120 L0,120 Z"></path>
-          </svg>
-        </div>
       </section>
 
       {/* Service list */}
-      <section className="py-16 md:py-28 bg-white">
+      <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
@@ -229,7 +224,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
       </section>
 
       {/* Process */}
-      <section className="py-16 md:py-28 bg-charcoal-950 text-white">
+      <section className="section-padding bg-charcoal-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold mb-4 tracking-wide">
@@ -266,7 +261,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
       </section>
 
       {/* Crack filling explainer */}
-      <section className="py-16 md:py-28 bg-primary-50">
+      <section className="section-padding bg-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <AnimatedSection>
@@ -314,7 +309,7 @@ export default function ServicesPage({ onNavigate }: PageProps) {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 md:py-28 bg-white">
+      <section className="section-padding bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">

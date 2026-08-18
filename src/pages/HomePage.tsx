@@ -10,7 +10,6 @@ import StructuredData from '../components/seo/StructuredData';
 import BenefitCard from '../components/BenefitCard';
 import BeforeAfterGallery from '../components/BeforeAfterGallery';
 import InteractiveServiceMap from '../components/InteractiveServiceMap';
-import SectionDivider from '../components/SectionDivider';
 import CallToAction from '../components/CallToAction';
 import VideoPlayer from '../components/VideoPlayer';
 import { BUSINESS_INFO } from '../config/businessInfo';
@@ -57,7 +56,7 @@ export default function HomePage({ onNavigate }: PageProps) {
       />
 
       {/* ── Why the base matters ───────────────────────────────────────── */}
-      <section className="relative py-12 md:py-28 bg-gradient-to-br from-primary-50 via-white to-charcoal-50 overflow-hidden texture-overlay">
+      <section className="relative section-padding bg-gradient-to-br from-primary-50 via-white to-charcoal-50 overflow-hidden texture-overlay">
         <div className="absolute inset-0 diagonal-split bg-gradient-to-br from-primary-100/30 to-transparent" />
         <div className="absolute top-20 right-10 w-32 h-32 bg-primary-500/10 blur-3xl floating-element" />
         <div className="absolute bottom-32 left-20 w-48 h-48 bg-amber-400/10 blur-3xl floating-element" style={{ animationDelay: '3s' }} />
@@ -105,7 +104,7 @@ export default function HomePage({ onNavigate }: PageProps) {
               comparisons={[
                 {
                   before: { src: media.CRACKED_ASPHALT.src, alt: media.CRACKED_ASPHALT.alt },
-                  after: { src: media.SEALED_WET.src, alt: media.SEALED_WET.alt },
+                  after: { src: media.SEALING.src, alt: media.SEALING.alt },
                   beforeLabel: 'UNSEALED',
                   afterLabel: 'SEALED',
                   caption: 'Grey, cracking asphalt versus a freshly sealed surface.',
@@ -205,11 +204,10 @@ export default function HomePage({ onNavigate }: PageProps) {
             </motion.div>
           </div>
         </div>
-        <SectionDivider variant="triangle" position="bottom" fillColor="white" />
       </section>
 
       {/* ── What we do ─────────────────────────────────────────────────── */}
-      <AnimatedSection className="relative py-16 md:py-28 bg-white">
+      <AnimatedSection className="relative section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bebas font-bold text-charcoal-950 mb-4 tracking-wide">
@@ -268,11 +266,10 @@ export default function HomePage({ onNavigate }: PageProps) {
             ))}
           </div>
         </div>
-        <SectionDivider variant="arrow" position="bottom" fillColor="#16161A" />
       </AnimatedSection>
 
       {/* ── Who you're dealing with ────────────────────────────────────── */}
-      <section className="relative py-16 md:py-28 bg-charcoal-950 text-white">
+      <section className="relative section-padding bg-charcoal-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bebas font-bold mb-4 tracking-wide">
@@ -338,11 +335,10 @@ export default function HomePage({ onNavigate }: PageProps) {
             </div>
           </div>
         </div>
-        <SectionDivider variant="split" position="bottom" fillColor="#F0FDF4" />
       </section>
 
       {/* ── In his customer's words ────────────────────────────────────── */}
-      <section className="relative py-16 md:py-28 bg-charcoal-950 overflow-hidden">
+      <section className="relative section-padding bg-charcoal-950 overflow-hidden">
         <div className="absolute top-20 right-10 w-64 h-64 bg-primary-500/10 blur-3xl" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
@@ -362,11 +358,10 @@ export default function HomePage({ onNavigate }: PageProps) {
             </div>
           </AnimatedSection>
         </div>
-        <SectionDivider variant="triangle" position="bottom" fillColor="white" />
       </section>
 
       {/* ── The work, moving ───────────────────────────────────────────── */}
-      <section className="relative py-16 md:py-28 bg-white">
+      <section className="relative section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-10 md:mb-14">
@@ -387,15 +382,13 @@ export default function HomePage({ onNavigate }: PageProps) {
             ))}
           </div>
         </div>
-        <SectionDivider variant="wave" position="bottom" fillColor="#F0FDF4" />
       </section>
 
       {/* ── Service area map ───────────────────────────────────────────── */}
-      <section className="relative py-16 md:py-28 bg-gradient-to-br from-white via-primary-50 to-white">
+      <section className="relative section-padding bg-gradient-to-br from-white via-primary-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <InteractiveServiceMap onNavigate={onNavigate} />
         </div>
-        <SectionDivider variant="wave" position="bottom" fillColor="#16161A" />
       </section>
 
       <CallToAction
